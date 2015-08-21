@@ -1,0 +1,16 @@
+<%= simple_form_for(@speaker) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :date %>
+    <%= f.input :time %>
+    <%= f.input :url %>
+    <%= f.input :image %>
+    <%= f.input :description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
