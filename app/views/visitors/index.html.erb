@@ -1,1 +1,10 @@
-<h3>Welcome</h3>
+<div>
+  <% @current_speakers.each do |speaker| %>
+    <%= speaker.name %>
+    <%= speaker.date %>
+    <%= speaker.time %>
+    <%= speaker.url %>
+    <%= speaker.image %>
+    <%= speaker.description %>
+  <% end %>
+</div>
