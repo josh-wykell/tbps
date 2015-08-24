@@ -18,15 +18,12 @@
   <tbody>
     <% @speakers.each do |speaker| %>
       <tr>
-        <td><%= speaker.name %></td>
+        <td><%= link_to "#{speaker.name}", speaker_path(speaker) %></td>
         <td><%= speaker.date %></td>
         <td><%= speaker.time %></td>
         <td><%= speaker.url %></td>
         <td><%= speaker.image %></td>
         <td><%= speaker.description %></td>
-        <td><%= link_to 'Show', speaker %></td>
-        <td><%= link_to 'Edit', edit_speaker_path(speaker) %></td>
-        <td><%= link_to 'Destroy', speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +31,3 @@
 
 <br>
 
-<%= link_to 'New Speaker', new_speaker_path %>
