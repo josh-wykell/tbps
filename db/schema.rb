@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821183749) do
+ActiveRecord::Schema.define(version: 20150825173734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,32 @@ ActiveRecord::Schema.define(version: 20150821183749) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "purchased_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "films", force: :cascade do |t|
+    t.string   "title"
+    t.date     "date"
+    t.time     "time"
+    t.string   "first_speaker"
+    t.string   "second_speaker"
+    t.text     "synopsis"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "other_events", force: :cascade do |t|
+    t.string   "title"
+    t.date     "date"
+    t.time     "time"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "speakers", force: :cascade do |t|
     t.string   "name"

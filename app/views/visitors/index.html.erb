@@ -1,4 +1,5 @@
 <div>
+  <h3>Next Speaker</h3>
   <% @current_speakers.each do |speaker| %>
     <%= speaker.name %>
     <%= speaker.date %>
@@ -7,4 +8,27 @@
     <%= speaker.image %>
     <%= speaker.description %>
   <% end %>
+</div>
+
+<div>
+  <h3>Next Film</h3>
+  <% @current_films.each do |film| %>
+    <%= film.title %>
+    <%= film.date %>
+    <%= film.time %>
+    <%= film.first_speaker %>
+    <%= film.second_speaker %>
+    <%= film.synopsis %>
+    <%= link_to 'Show', film %>
+  <% end %>
+</div>
+
+<div>
+  <h3>Other Events</h3>
+  <% @current_other_events.each do |event| %>
+    <%= event.title %>
+    <%= event.date %>
+    <%= event.time %>
+    <%= event.description %>
+   <% end %> 
 </div>

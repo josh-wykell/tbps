@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Films</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>First speaker</th>
+      <th>Second speaker</th>
+      <th>Synopsis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @films.each do |film| %>
+      <tr>
+        <td><%= film.title %></td>
+        <td><%= film.date %></td>
+        <td><%= film.time %></td>
+        <td><%= film.first_speaker %></td>
+        <td><%= film.second_speaker %></td>
+        <td><%= film.synopsis %></td>
+        <td><%= link_to 'Show', film %></td>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
