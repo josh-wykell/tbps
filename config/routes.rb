@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sales
+  resources :carts
   resources :other_events
   resources :films
   resources :carts

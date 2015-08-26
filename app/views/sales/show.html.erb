@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @sale.price %>
+</p>
+
+<p>
+  <strong>Sellable:</strong>
+  <%= @sale.sellable_id %>
+</p>
+
+<p>
+  <strong>Sellable type:</strong>
+  <%= @sale.sellable_type %>
+</p>
+
+<p>
+  <strong>Cart:</strong>
+  <%= @sale.cart_id %>
+</p>
+
+<%= link_to 'Edit', edit_sale_path(@sale) %> |
+<%= link_to 'Back', sales_path %>
