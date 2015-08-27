@@ -1,8 +1,8 @@
 module Sellable
   extend ActiveSupport::Concern
 
-  included do 
-    has_many :sales, :as => :Sellable
-  end
+  # included do 
+  #   belongs_to :sales, :as => :Sellable
+  # end
 
 end
