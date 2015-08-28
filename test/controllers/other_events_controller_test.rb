@@ -18,7 +18,7 @@ class OtherEventsControllerTest < ActionController::TestCase
 
   test "should create other_event" do
     assert_difference('OtherEvent.count') do
-      post :create, other_event: { date: @other_event.date, descritption: @other_event.descritption, time: @other_event.time, title: @other_event.title }
+      post :create, other_event: { city: @other_event.city, date: @other_event.date, description: @other_event.description, street_address: @other_event.street_address, time: @other_event.time, title: @other_event.title, zipcode: @other_event.zipcode }
     end
 
     assert_redirected_to other_event_path(assigns(:other_event))
@@ -35,7 +35,7 @@ class OtherEventsControllerTest < ActionController::TestCase
   end
 
   test "should update other_event" do
-    patch :update, id: @other_event, other_event: { date: @other_event.date, descritption: @other_event.descritption, time: @other_event.time, title: @other_event.title }
+    patch :update, id: @other_event, other_event: { city: @other_event.city, date: @other_event.date, description: @other_event.description, street_address: @other_event.street_address, time: @other_event.time, title: @other_event.title, zipcode: @other_event.zipcode }
     assert_redirected_to other_event_path(assigns(:other_event))
   end
 

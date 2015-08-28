@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sellable:</strong>
+  <%= @sale_item.sellable_id %>
+</p>
+
+<p>
+  <strong>Sellable type:</strong>
+  <%= @sale_item.sellable_type %>
+</p>
+
+<%= link_to 'Edit', edit_sale_item_path(@sale_item) %> |
+<%= link_to 'Back', sale_items_path %>

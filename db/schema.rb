@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825173734) do
+ActiveRecord::Schema.define(version: 20150828144516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,12 +49,6 @@ ActiveRecord::Schema.define(version: 20150825173734) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "carts", force: :cascade do |t|
-    t.datetime "purchased_at"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "films", force: :cascade do |t|
     t.string   "title"
     t.date     "date"
@@ -70,21 +64,48 @@ ActiveRecord::Schema.define(version: 20150825173734) do
     t.string   "title"
     t.date     "date"
     t.time     "time"
+    t.string   "street_address"
+    t.string   "city"
+    t.integer  "zipcode"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
+
+  create_table "sale_items", force: :cascade do |t|
+    t.integer  "sellable_id"
+    t.string   "sellable_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "sale_items", ["sellable_type", "sellable_id"], name: "index_sale_items_on_sellable_type_and_sellable_id", using: :btree
 
   create_table "speakers", force: :cascade do |t|
     t.string   "name"
     t.date     "date"
-    t.time     "time"
-    t.string   "url"
-    t.string   "image"
+    t.text     "biography"
     t.text     "description"
+    t.string   "image"
+    t.string   "url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "speaking_events", force: :cascade do |t|
+    t.date     "date"
+    t.time     "time"
+    t.string   "street_address"
+    t.string   "city"
+    t.integer  "zipcode"
+    t.text     "description"
+    t.decimal  "price"
+    t.integer  "speaker_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "speaking_events", ["speaker_id"], name: "index_speaking_events_on_speaker_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -105,4 +126,5 @@ ActiveRecord::Schema.define(version: 20150825173734) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "speaking_events", "speakers"
 end

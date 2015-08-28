@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @speaking_event.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @speaking_event.time %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @speaking_event.street_address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @speaking_event.city %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @speaking_event.zipcode %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @speaking_event.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @speaking_event.price %>
+</p>
+
+<p>
+  <strong>Speaker:</strong>
+  <%= @speaking_event.speaker %>
+</p>
+
+<%= link_to 'Edit', edit_speaking_event_path(@speaking_event) %> |
+<%= link_to 'Back', speaking_events_path %>
