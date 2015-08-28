@@ -3,9 +3,7 @@
 <table id="line_items">
   <tr>
     <th>Product</th>
-    <th>Qty</th>
-    <th class="price">Unit Price</th>
-    <th class="price">Full Price</th>
+    <th class="price">Price</th>
   </tr>
   <% @cart.sale_items.each do |sale_item| %>
     <tr class="<%= cycle :odd, :even %>">

@@ -7,6 +7,7 @@
     <tr>
       <th>Sellable</th>
       <th>Sellable type</th>
+      <th>Sellable cart_id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= sale_item.sellable_id %></td>
         <td><%= sale_item.sellable_type %></td>
+        <td><%= sale_item.cart_id %></td>
         <td><%= link_to 'Show', sale_item %></td>
         <td><%= link_to 'Edit', edit_sale_item_path(sale_item) %></td>
         <td><%= link_to 'Destroy', sale_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
