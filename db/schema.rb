@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150828144516) do
+ActiveRecord::Schema.define(version: 20150828204517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,12 @@ ActiveRecord::Schema.define(version: 20150828144516) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "purchased_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "films", force: :cascade do |t|
     t.string   "title"
     t.date     "date"
@@ -77,6 +83,7 @@ ActiveRecord::Schema.define(version: 20150828144516) do
     t.string   "sellable_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "cart_id"
   end
 
   add_index "sale_items", ["sellable_type", "sellable_id"], name: "index_sale_items_on_sellable_type_and_sellable_id", using: :btree

@@ -26,11 +26,9 @@
         <td><%= speaking_event.city %></td>
         <td><%= speaking_event.zipcode %></td>
         <td><%= speaking_event.description %></td>
-        <td><%= speaking_event.price %></td>
-        <td><%= speaking_event.speaker %></td>
-        <td><%= link_to 'Show', speaking_event %></td>
-        <td><%= link_to 'Edit', edit_speaking_event_path(speaking_event) %></td>
-        <td><%= link_to 'Destroy', speaking_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= number_to_currency(speaking_event.price) %></td>
+        <td><%= speaking_event.speaker.name %></td>
+        <td><%= link_to "Add to Cart", sale_items_path(sale_item:{sellable_id: speaking_event.id, sellable_type: "SpeakingEvent"}), method:'post' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +36,3 @@
 
 <br>
 
-<%= link_to 'New Speaking event', new_speaking_event_path %>

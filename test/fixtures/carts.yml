@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  purchased_at: 2015-08-27 18:23:08
+  purchased_at: 2015-08-28 12:27:28
 
 two:
-  purchased_at: 2015-08-27 18:23:08
+  purchased_at: 2015-08-28 12:27:28
