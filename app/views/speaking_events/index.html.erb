@@ -28,7 +28,7 @@
         <td><%= speaking_event.description %></td>
         <td><%= number_to_currency(speaking_event.price) %></td>
         <td><%= speaking_event.speaker.name %></td>
-        <td><%= link_to "Add to Cart", sale_items_path(sale_item:{sellable_id: speaking_event.id, sellable_type: "SpeakingEvent", cart_id: @current_cart}), method:'post' %></td>
+        <td><%= link_to "Add to Cart", sale_items_path(sale_item:{sellable_id: speaking_event.id, sellable_type: "SpeakingEvent", cart_id: current_cart}), method:'post' %></td>
       </tr>
     <% end %>
   </tbody>

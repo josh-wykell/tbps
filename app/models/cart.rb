@@ -1,6 +1,7 @@
 class Cart < ActiveRecord::Base
   has_many :sale_items
-  
+  has_many :sold_speaking_events, :through => :sale_items, :source => :sellable, :source_type => 'SpeakingEvent'
+
   def total_price
     # convert to array so it doesn't try to do sum on database directly
     sale_items.to_a.sum     #(&:full_price)
