@@ -5,15 +5,15 @@
     <th>Product</th>
     <th class="price">Price</th>
   </tr>
-  <% @cart.sale_items.each do |sale_item| %>
+  <% @cart.sold_speaking_events.each do |speaking_event| %>
     <tr class="<%= cycle :odd, :even %>">
-      <td><%= sale_item.sold_speaking_event.speaker.name %></td>
-      <td class="price"><%= number_to_currency(sale_item.speaking_event.price) %></td>
+      <td><%= speaking_event.speaker.name %></td>
+      <td class="price"><%= number_to_currency(speaking_event.price) %></td>
     </tr>
   <% end %>
   <tr>
     <td class="total price" colspan="4">
-      Total: <%= number_to_currency @cart.total_price %>
+      Total: <%= number_to_currency(@cart.total_price) %>
     </td>
   </tr>
 </table>

@@ -4,4 +4,3 @@ class SpeakingEvent < ActiveRecord::Base
 end
 
 
-#test
