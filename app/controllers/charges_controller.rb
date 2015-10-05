@@ -4,8 +4,8 @@ def new
 end
 
 def create
-  # Amount in cents
-  @amount = 500
+  @cart = Cart.find(params[:cart_id])
+  @amount = @cart.total_price_in_cents
 
   customer = Stripe::Customer.create(
     :email => 'example@stripe.com',
