@@ -1,7 +1,8 @@
 class Cart < ActiveRecord::Base
   has_many :sale_items
   has_many :sold_speaking_events, :through => :sale_items, :source => :sellable, :source_type => 'SpeakingEvent'
-  
+  after_create :mark_cart_as_purchased
+
   def total_price
     sold_speaking_events.to_a.sum(&:price)     
   end
@@ -18,12 +19,13 @@ class Cart < ActiveRecord::Base
                           amount: cart.total_price * 100,
                           description: cart.sellable.name,
                           currency: 'usd'
-
-    rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to cart_path
   end
-  
+
+  def mark_cart_as_purchased
+    if @cart.card_token?  
+      cart.update_attribute(:purchased_at, Time.now)
+    end
+  end
   # def paypal_url(return_url)
   #   values = {
   #     :business => 'tbypsychoanalytic-facilitator@gmail.com',
