@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member_last_name: MyString
+  member_first_name: MyString
+  degree: MyString
+  liscense_number: MyString
+  home_address_street: MyString
+  home_address_city: MyString
+  home_address_state: MyString
+  home_address_zip: 1
+  office_address_street: MyString
+  office_address_city: MyString
+  office_address_state: MyString
+  office_address_zip: 1
+  email: MyString
+  office_phone: MyString
+  fax: MyString
+  cell_phone: MyString
+  home_phone: MyString
+  birth_day: 1
+  birth_month: MyString
+  birth_year: 1
+  practice_specialities: MyText
+  publish: false
+  new_patients: false
+
+two:
+  member_last_name: MyString
+  member_first_name: MyString
+  degree: MyString
+  liscense_number: MyString
+  home_address_street: MyString
+  home_address_city: MyString
+  home_address_state: MyString
+  home_address_zip: 1
+  office_address_street: MyString
+  office_address_city: MyString
+  office_address_state: MyString
+  office_address_zip: 1
+  email: MyString
+  office_phone: MyString
+  fax: MyString
+  cell_phone: MyString
+  home_phone: MyString
+  birth_day: 1
+  birth_month: MyString
+  birth_year: 1
+  practice_specialities: MyText
+  publish: false
+  new_patients: false

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022171449) do
+ActiveRecord::Schema.define(version: 20151022215759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,12 +74,41 @@ ActiveRecord::Schema.define(version: 20151022171449) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "members", force: :cascade do |t|
+    t.string   "member_last_name"
+    t.string   "member_first_name"
+    t.string   "degree"
+    t.string   "liscense_number"
+    t.string   "home_address_street"
+    t.string   "home_address_city"
+    t.string   "home_address_state"
+    t.integer  "home_address_zip"
+    t.string   "office_address_street"
+    t.string   "office_address_city"
+    t.string   "office_address_state"
+    t.integer  "office_address_zip"
+    t.string   "email"
+    t.string   "office_phone"
+    t.string   "fax"
+    t.string   "cell_phone"
+    t.string   "home_phone"
+    t.integer  "birth_day"
+    t.string   "birth_month"
+    t.integer  "birth_year"
+    t.text     "practice_specialities"
+    t.boolean  "publish",               default: false, null: false
+    t.boolean  "new_patients",          default: false, null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
   create_table "memberships", force: :cascade do |t|
     t.string   "card_token"
     t.string   "email"
     t.datetime "purchased_at"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "type"
   end
 
   create_table "other_events", force: :cascade do |t|
