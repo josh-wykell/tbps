@@ -3,7 +3,10 @@ class CartsController < InheritedResources::Base
 
   def update
     @cart = current_cart
-    @cart.update cart_params.merge(email: stripe_params["stripeEmail"], card_token:stripe_params["stripeToken"])
+    @cart.update cart_params.merge(email: stripe_params["stripeEmail"], card_token: stripe_params["stripeToken"], 
+                                   buyer_name: stripe_params["stripeBillingName"], street_address: stripe_params["stripeBillingAddressLine1"], 
+                                   zipcode: stripe_params["stripeBillingAddressZip"], city: stripe_params["stripeBillingAddressCity"], 
+                                   state: stripe_params["stripeBillingAddressState"], country: stripe_params["stripeBillingAddressCountry"])
     raise "Please, check cart errors" unless @cart.valid?
     @cart.process_payment
     @cart.save
@@ -25,11 +28,12 @@ class CartsController < InheritedResources::Base
   private
 
     def stripe_params
-      params.permit :stripeEmail, :stripeToken
+      params.permit :stripeEmail, :stripeToken, :stripeBillingName, :stripeBillingAddressLine1, 
+                    :stripeBillingAddressZip, :stripeBillingAddressCity, :stripeBillingAddressState, :stripeBillingAddressCountry
     end
 
 
     def cart_params
-      params.require(:cart).permit(:purchased_at)
+      params.permit :purchased_at
     end
 end
