@@ -1,14 +1,13 @@
 class CartsController < InheritedResources::Base
 
-  def new
-  end
 
-  def create
-    @cart = Cart.new cart_params.merge(email: stripe_params["stripeEmail"], card_token:stripe_params["stripeToken"])
+  def update
+    @cart = current_cart
+    @cart.update cart_params.merge(email: stripe_params["stripeEmail"], card_token:stripe_params["stripeToken"])
     raise "Please, check cart errors" unless @cart.valid?
     @cart.process_payment
     @cart.save
-    redirect_to @cart, notice: 'Your order has been completed'
+    flash[:notice] = 'Your order has been completed'
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
