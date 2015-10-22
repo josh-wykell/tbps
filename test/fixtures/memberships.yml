@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  card_token: MyString
+  email: MyString
+  purchased_at: 2015-10-22 10:20:18
+
+two:
+  card_token: MyString
+  email: MyString
+  purchased_at: 2015-10-22 10:20:18

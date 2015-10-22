@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :other_events
   resources :films
   resources :speakers
+  resources :memberships
   get 'current_cart', to: 'carts#show'
   get 'checkout',     to: 'carts#checkout'
   devise_for :admin_users, ActiveAdmin::Devise.config

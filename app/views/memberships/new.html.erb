@@ -1,0 +1,27 @@
+<%= form_for(@membership) do |f| %>
+  <% if @membership.errors.any? %>
+    <div class="alert alert-dander alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4>
+        <%= pluralize(@membership.errors.count, "error") %> prohibited this membership from being created:
+      </h4>
+
+      <ul>
+        <% @membership.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :purchased_at, :value => Time.now %>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description= "TBPS Membership"
+              data-amount= "500"
+              data-locale="auto"></script>
+    </div>        
+<% end %>
+
