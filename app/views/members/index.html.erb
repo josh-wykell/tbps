@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Member Directory</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Street address</th>
+      <th>City & Zip</th>
+      <th>Practice Specialities</th>
+      <th>Accepting New Patients</th>
+      <th>Office Phone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= member.member_first_name %><%= member.member_last_name %></td>
+        <td><%= member.office_address_street %></td>
+        <td><%= member.office_address_city %>, <%= member.office_address_zip %></td>
+        <td><%= member.practice_specialities %></td>
+        <% if member.new_patients %>
+        <td> Yes </td>
+        <% else %>
+        <td> No </td>
+        <% end %>
+        <td><%= member.office_phone %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

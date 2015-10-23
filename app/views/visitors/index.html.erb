@@ -1,5 +1,5 @@
 <div>
-  <h3>Next Speaker</h3>
+  <h3><%= link_to 'Next_Speaker', speaking_events_path %></h3>
   <% @current_speaking_events.each do |event| %>
     <%= event.speaker.name %>
     <%= event.date %>
@@ -9,7 +9,7 @@
 </div>
 
 <div>
-  <h3>Next Film</h3>
+  <h3><%= link_to 'Next Film', films_path %></h3>
   <% @current_films.each do |film| %>
     <%= film.title %>
     <%= film.date %>
@@ -22,11 +22,15 @@
 </div>
 
 <div>
-  <h3>Other Events</h3>
+  <h3><%= link_to 'Other Events', other_events_path %></h3>
   <% @current_other_events.each do |event| %>
     <%= event.title %>
     <%= event.date %>
     <%= event.time %>
     <%= event.description %>
    <% end %> 
+</div>
+
+<div>
+  <h3><%= link_to 'Member Directory', members_path %></h3>
 </div>

@@ -18,15 +18,13 @@
   <tbody>
     <% @films.each do |film| %>
       <tr>
-        <td><%= film.title %></td>
+        <td><%= link_to "#{film.title}", film_path(film) %></td>
         <td><%= film.date %></td>
         <td><%= film.time %></td>
         <td><%= film.first_speaker %></td>
         <td><%= film.second_speaker %></td>
         <td><%= film.synopsis %></td>
         <td><%= link_to 'Show', film %></td>
-        <td><%= link_to 'Edit', edit_film_path(film) %></td>
-        <td><%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +32,3 @@
 
 <br>
 
-<%= link_to 'New Film', new_film_path %>

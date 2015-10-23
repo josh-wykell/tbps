@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Speaker:</strong>
+  <%= @speaking_event.speaker.name %>
+</p>
+
+<p>
+  <strong>Biography</strong>
+  <%= @speaking_event.speaker.biography %>
+</p>
+
+<p>
   <strong>Date:</strong>
   <%= @speaking_event.date %>
 </p>
@@ -35,10 +45,4 @@
   <%= @speaking_event.price %>
 </p>
 
-<p>
-  <strong>Speaker:</strong>
-  <%= @speaking_event.speaker %>
-</p>
-
-<%= link_to 'Edit', edit_speaking_event_path(@speaking_event) %> |
 <%= link_to 'Back', speaking_events_path %>

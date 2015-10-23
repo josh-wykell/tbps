@@ -19,16 +19,13 @@
   <tbody>
     <% @other_events.each do |other_event| %>
       <tr>
-        <td><%= other_event.title %></td>
+        <td><%= link_to "#{other_event.title}", other_event_path(other_event) %></td>
         <td><%= other_event.date %></td>
         <td><%= other_event.time %></td>
         <td><%= other_event.street_address %></td>
         <td><%= other_event.city %></td>
         <td><%= other_event.zipcode %></td>
         <td><%= other_event.description %></td>
-        <td><%= link_to 'Show', other_event %></td>
-        <td><%= link_to 'Edit', edit_other_event_path(other_event) %></td>
-        <td><%= link_to 'Destroy', other_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +33,3 @@
 
 <br>
 
-<%= link_to 'New Other event', new_other_event_path %>
