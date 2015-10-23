@@ -1,4 +1,5 @@
 class Membership < ActiveRecord::Base
+  belongs_to :member
 
   def dues_payment
     @amount = 500
