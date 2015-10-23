@@ -14,30 +14,152 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :title, class: "col-sm-2 control-label" %>
+    <%= f.label :first_name, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_area :title, class: "form-control" %>
+      <%= f.text_field :member_first_name, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :avatar, class: "col-sm-2 control-label" %>
+    <%= f.label :last_name, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.file_field :avatar, class: "form-control" %>
+      <%= f.text_field :member_last_name, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :body, class: "col-sm-2 control-label" %>
+    <%= f.label :degree, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_area :body, class: "form-control" %>
+      <%= f.text_field :degree, class: "form-control" %>
+    </div>
+  </div>
+
+  <div>
+    <h2>Home Address(will not be published in our member directory)</h2>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :street_address, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :home_address_street, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :tag, class: "col-sm-2 control-label" %>
+    <%= f.label :city, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :all_tags, class: "form-control" %>
+      <%= f.text_field :home_address_city, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :state, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :home_address_state, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :zip_code, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :home_address_zip, class: "form-control" %>
+    </div>
+  </div>
+
+  <div>
+    <h2>Office Address</h2>  
+  </div>
+
+  <div class="form-group">
+    <%= f.label :street_address, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :office_address_street, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :city, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :office_address_city, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :state, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :office_address_state, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :zip_code, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :office_address_zip, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :office_phone, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :office_phone, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :cell_pohone, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :cell_phone, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :home_phone, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      (will not be published)<%= f.text_field :home_phone, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :fax, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :fax, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :date_of_birth, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.date_select :birth_date, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :publish, class: "col-sm-2 control-label" %>
+    <%= f.label :publish, "Yes", :value => "true" %>
+    <%= f.radio_button :publish, true %>
+    <%= f.label :publish, "No", :value => "false" %>
+    <%= f.radio_button :publish, false, :checked => true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :accepting_new_patients, class: "col-sm-2 control-label" %>
+    <%= f.label :new_patient, "Yes", :value => "true" %>
+    <%= f.radio_button :new_patients, true %>
+    <%= f.label :new_patient, "No", :value => "false" %>
+    <%= f.radio_button :new_patient, false, :checked => true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :practice_specialities, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_area :practice_specialities, class: "form-control" %>
     </div>
   </div>
 

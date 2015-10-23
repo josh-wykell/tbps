@@ -12,9 +12,10 @@ class MembersController < ApplicationController
   def create
     @member = Member.create(member_params)
     if @member.save
-      redirect_to new_membership_path
+      redirect_to new_membership_path(@member)
     else
       render :new
+    end
   end
 
   def edit
@@ -23,6 +24,7 @@ class MembersController < ApplicationController
   def update
     if @member.update(member_params)
       redirect_to @member, notice: 'Your member profile has been updated'
+    end
   end
 
   def show
@@ -36,7 +38,7 @@ class MembersController < ApplicationController
     end
 
     def member_params
-      params.require(:member).permit(:member_last_name, :member_first_name, :degree, :kiscense_number, :home_address_street, 
+      params.require(:member).permit(:member_last_name, :member_first_name, :degree, :liscense_number, :home_address_street, 
                      :home_address_city, :home_address_state, :home_address_zip, :office_address_street, :office_address_city, 
                      :office_address_state, :office_address_zip, :email, :office_phone, :fax, :cell_phone, :home_phone, :birth_day,
                      :birth_month, :birth_year, :practice_specialities, :publish, :new_patients)

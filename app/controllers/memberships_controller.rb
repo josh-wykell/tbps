@@ -4,7 +4,7 @@ class MembershipsController < ApplicationController
     @membership = Membership.new
   end
 
-  def create(:member_id)
+  def create
     @membership = Membership.new membership_params.merge(email: stripe_params["stripeEmail"],
                                                                card_token: stripe_params["stripeToken"])
     raise "Please, membership errors" unless @membership.valid?
