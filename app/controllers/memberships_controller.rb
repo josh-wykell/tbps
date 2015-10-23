@@ -1,12 +1,14 @@
 class MembershipsController < ApplicationController
 
   def new
-    @membership = Membership.new
+    member = Member.find(params[:member_id])
+    @membership = member.memberships.build
   end
 
   def create
-    @membership = Membership.new membership_params.merge(email: stripe_params["stripeEmail"],
-                                                               card_token: stripe_params["stripeToken"])
+    member = Member.find(params[:member_id])
+    @membership = member.memberships.create(membership_params.merge(email: stripe_params["stripeEmail"],
+                                                               card_token: stripe_params["stripeToken"]))
     raise "Please, membership errors" unless @membership.valid?
     @membership.dues_payment
     @membership.save

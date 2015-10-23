@@ -12,7 +12,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.create(member_params)
     if @member.save
-      redirect_to new_membership_path(@member)
+      redirect_to new_member_membership_path(@member)
     else
       render :new
     end
@@ -28,6 +28,10 @@ class MembersController < ApplicationController
   end
 
   def show
+    @member = Member.find(params[:id])
+  end
+
+  def member_payment
     @member = Member.find(params[:id])
   end
 
