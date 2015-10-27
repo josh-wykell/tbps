@@ -45,6 +45,6 @@ class MembersController < ApplicationController
       params.require(:member).permit(:member_last_name, :member_first_name, :degree, :liscense_number, :home_address_street, 
                      :home_address_city, :home_address_state, :home_address_zip, :office_address_street, :office_address_city, 
                      :office_address_state, :office_address_zip, :email, :office_phone, :fax, :cell_phone, :home_phone, :birth_day,
-                     :birth_month, :birth_year, :practice_specialities, :publish, :new_patients)
+                     :birth_month, :birth_year, :practice_specialities, :membership_type, :publish, :new_patients)
     end
 end
