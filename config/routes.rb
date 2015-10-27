@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :other_events
   resources :films
   resources :speakers
+  resources :membership_types
   resources :members do
     resources :memberships
   end
