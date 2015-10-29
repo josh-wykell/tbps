@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_cart
+  helper_method :mark_as_member
    #Prevent CSRF attacks by raising an exception.
    #For APIs, you may want to use :null_session instead.
   protect_from_forgery 
@@ -14,4 +15,13 @@ class ApplicationController < ActionController::Base
     end
     @current_cart
   end
+
+    def mark_as_member
+    @member_token = params[:member_token] == "1" ? true : false
+    if @member_token = 2
+      current_cart.update_attribute(:is_a_member, true)
+    end
+    redirect_to speaking_events_path
+  end
+
 end

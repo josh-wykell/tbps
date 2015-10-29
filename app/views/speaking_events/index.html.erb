@@ -27,7 +27,12 @@
         <td><%= speaking_event.city %></td>
         <td><%= speaking_event.zipcode %></td>
         <td><%= speaking_event.description %></td>
-        <td><%= number_to_currency(speaking_event.price) %></td>
+        <% @cart=current_cart %>
+        <% if @cart.is_a_member %>
+          <td>><%= number_to_currency(speaking_event.member_price) %></td>
+        <% else %>
+          <td><%= number_to_currency(speaking_event.regular_price) %></td>
+        <% end %>
         <td><%= speaking_event.speaker.name %></td>
         <td><%= link_to "Add to Cart", sale_items_path(sale_item:{sellable_id: speaking_event.id, sellable_type: "SpeakingEvent", cart_id: current_cart}), method:'post' %></td>
       </tr>

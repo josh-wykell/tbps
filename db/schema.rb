@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027225631) do
+ActiveRecord::Schema.define(version: 20151028233031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20151027225631) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "purchased_at"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "buyer_name"
     t.string   "email"
     t.string   "card_token"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20151027225631) do
     t.string   "city"
     t.string   "state"
     t.string   "country"
+    t.boolean  "is_a_member",    default: false, null: false
   end
 
   create_table "films", force: :cascade do |t|
@@ -159,10 +160,11 @@ ActiveRecord::Schema.define(version: 20151027225631) do
     t.string   "city"
     t.integer  "zipcode"
     t.text     "description"
-    t.decimal  "price"
+    t.decimal  "regular_price"
     t.integer  "speaker_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.decimal  "member_price"
   end
 
   add_index "speaking_events", ["speaker_id"], name: "index_speaking_events_on_speaker_id", using: :btree
