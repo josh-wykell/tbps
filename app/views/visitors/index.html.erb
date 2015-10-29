@@ -41,7 +41,7 @@
 <div class="modal fade" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
-      <%= form_for(mark_as_member) do |form| %>
+      <%= form_for(@cart, html:) do |f| %>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Are You A TBPS Member?</h4>
@@ -49,14 +49,10 @@
       <div class="modal-body">
 
         <div class="form-group">
-          <label for="member_token_true" class="col-sm-2 control-label">Yes</label>
-          <div class="col-sm-10">
-            <input checked="checked" class="form-control" name="is_a_member_yes" id="Yes" type="radio" value="true">
-          </div>
-          <label for="member_token_false" class="col-sm-2 control-label">No</label>
-          <div class="col-sm-10">
-            <input checked="checked" class="form-control" name="is_a_member_no" id="No" type="radio" value="false"
-          </div>
+          <%= f.label :is_a_member, "Yes", :value => "true" %>
+          <%= f.radio_button :is_a_member, true %>
+          <%= f.label :is_a_member, "No", :value => "false" %>
+          <%= f.radio_button :is_a_member, false, :checked => true %>
         </div>
 
       </div>
