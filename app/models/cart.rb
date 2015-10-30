@@ -1,6 +1,8 @@
 class Cart < ActiveRecord::Base
   has_many :sale_items
   has_many :sold_speaking_events, :through => :sale_items, :source => :sellable, :source_type => 'SpeakingEvent'
+  has_one :cart_membership_status
+  accepts_nested_attributes_for :cart_membership_status
   after_save :mark_cart_as_purchased
 
   def total_price

@@ -1,8 +1,10 @@
 
 <div>
-  <button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
-  Next Speaker
-</button>
+  <% if current_cart.cart_membership_status %>
+    <h3><%= link_to 'Next Speaker', speaking_events_path %></h3>
+  <% else %>
+    <h1><%= link_to 'Next Speaker', new_cart_cart_membership_status_path(current_cart) %></h1>
+  <% end %>
   <% @current_speaking_events.each do |event| %>
     <%= event.speaker.name %>
     <%= event.date %>
@@ -36,31 +38,4 @@
 
 <div>
   <h3><%= link_to 'Member Directory', members_path %></h3>
-</div>
-
-<div class="modal fade" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <%= form_for(@cart, html:) do |f| %>
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Are You A TBPS Member?</h4>
-      </div>
-      <div class="modal-body">
-
-        <div class="form-group">
-          <%= f.label :is_a_member, "Yes", :value => "true" %>
-          <%= f.radio_button :is_a_member, true %>
-          <%= f.label :is_a_member, "No", :value => "false" %>
-          <%= f.radio_button :is_a_member, false, :checked => true %>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-default">Submit</button>     
-      </div>
-      <% end %>
-    </div>
-  </div>
 </div>

@@ -25,15 +25,6 @@ class CartsController < InheritedResources::Base
     @cart = current_cart
   end
 
-  def mark_as_member
-    @cart = Cart.find(params[:id])
-    @member_token = params[:member_token] == "1" ? true : false
-    if @member_token = 2
-      @cart.update_attribute(:is_a_member, true)
-    end
-    redirect_to speaking_events_path
-  end
-
   private
 
     def stripe_params

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151028233031) do
+ActiveRecord::Schema.define(version: 20151029225330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,10 +49,19 @@ ActiveRecord::Schema.define(version: 20151028233031) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "cart_membership_statuses", force: :cascade do |t|
+    t.boolean  "is_a_member", default: false, null: false
+    t.integer  "cart_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "cart_membership_statuses", ["cart_id"], name: "index_cart_membership_statuses_on_cart_id", using: :btree
+
   create_table "carts", force: :cascade do |t|
     t.datetime "purchased_at"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "buyer_name"
     t.string   "email"
     t.string   "card_token"
@@ -61,7 +70,6 @@ ActiveRecord::Schema.define(version: 20151028233031) do
     t.string   "city"
     t.string   "state"
     t.string   "country"
-    t.boolean  "is_a_member",    default: false, null: false
   end
 
   create_table "films", force: :cascade do |t|
@@ -188,5 +196,6 @@ ActiveRecord::Schema.define(version: 20151028233031) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "cart_membership_statuses", "carts"
   add_foreign_key "speaking_events", "speakers"
 end

@@ -20,7 +20,9 @@
   <% @cart.sold_speaking_events.each do |speaking_event| %>
     <tr class="<%= cycle :odd, :even %>">
       <td><%= speaking_event.speaker.name %></td>
-      <td class="price"><%= number_to_currency(speaking_event.price) %></td>
+      <td class="price"><%= number_to_currency(speaking_event.regular_price) %></td>
+            <td class="price"><%= number_to_currency(speaking_event.member_price) %></td>
+
     </tr>
   <% end %>
 </table>
