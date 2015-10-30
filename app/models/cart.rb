@@ -6,7 +6,11 @@ class Cart < ActiveRecord::Base
   after_save :mark_cart_as_purchased
 
   def total_price
-    sellables.to_a.sum(&:regular_price)     
+    if cart_membership_status.is_a_member
+      sellables.to_a.sum(&:member_price)
+    else
+      sellables.to_a.sum(&:regular_price) 
+    end
   end
 
   def sellables

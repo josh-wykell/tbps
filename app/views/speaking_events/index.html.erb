@@ -29,7 +29,7 @@
         <td><%= speaking_event.description %></td>
         <% @cart=current_cart %>
         <% if @cart.cart_membership_status.is_a_member %>
-          <td>><%= number_to_currency(speaking_event.member_price) %></td>
+          <td><%= number_to_currency(speaking_event.member_price) %></td>
         <% else %>
           <td><%= number_to_currency(speaking_event.regular_price) %></td>
         <% end %>
