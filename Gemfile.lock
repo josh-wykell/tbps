@@ -113,6 +113,7 @@ GEM
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
+    high_voltage (2.4.0)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     hub (1.12.4)
@@ -248,6 +249,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   foreman
+  high_voltage
   hub
   jbuilder (~> 2.0)
   jquery-rails

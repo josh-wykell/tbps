@@ -14,6 +14,7 @@ gem 'puma'
 gem 'simple_form'
 gem 'activeadmin', github: 'activeadmin'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'high_voltage'
 
 group :development, :test do
   gem 'byebug'
