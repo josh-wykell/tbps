@@ -14,13 +14,15 @@
     </div>
   <% end %>
 
+  <h3><%= @membership.member.membership_type %></h3>
+  <h3><%= number_to_currency((@membership.membership_price)/100) %></h3>
   <%= f.hidden_field :purchased_at, :value => Time.now %>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
               data-description= "TBPS Membership"
-              data-amount= "500"
+              data-amount= "<%= @membership.membership_price %>"
               data-locale="auto"></script>
     </div>        
 <% end %>

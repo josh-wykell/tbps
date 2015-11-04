@@ -142,17 +142,17 @@
 
   <div class="form-group">
     <%= f.label :publish, class: "col-sm-2 control-label" %>
-    <%= f.label :publish, "Yes", :value => "true" %>
+    <%= f.label        :publish, "Yes", :value => "true" %>
     <%= f.radio_button :publish, true %>
-    <%= f.label :publish, "No", :value => "false" %>
+    <%= f.label        :publish, "No", :value => "false" %>
     <%= f.radio_button :publish, false, :checked => true %>
   </div>
 
   <div class="form-group">
     <%= f.label :accepting_new_patients, class: "col-sm-2 control-label" %>
-    <%= f.label :new_patient, "Yes", :value => "true" %>
+    <%= f.label        :new_patient, "Yes", :value => "true" %>
     <%= f.radio_button :new_patients, true %>
-    <%= f.label :new_patient, "No", :value => "false" %>
+    <%= f.label        :new_patient, "No", :value => "false" %>
     <%= f.radio_button :new_patients, false, :checked => true %>
   </div>
 
@@ -164,9 +164,20 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :membership_type_id, class: "col-sm-2 control-label" %>
+    <%= f.label :membership_type, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.collection_select :membership_type_id, MembershipType.order(:type_of), :id, :type_of, include_blank: true, class: "form-control" %>
+      <%= f.label        :membership_type, "Clinical", :value => "clinical" %>
+      <%= f.radio_button :membership_type, "Clinical" %>
+      <%= f.label        :membership_type, "Academic", :value => "acadaemic" %>
+      <%= f.radio_button :membership_type, "Academic" %>
+      <%= f.label        :membership_type, "Corresponding", :value => "corresponding" %>
+      <%= f.radio_button :membership_type, "Corresponding" %>
+      <%= f.label        :membership_type, "Student", :value => "student" %>
+      <%= f.radio_button :membership_type, "Student" %>
+      <%= f.label        :membership_type, "Life", :value => "life" %>
+      <%= f.radio_button :membership_type, "Life" %>
+      <%= f.label        :membership_type, "Friend", :value => "friend" %>
+      <%= f.radio_button :membership_type, "Friend" %>
     </div>
   </div>
 
