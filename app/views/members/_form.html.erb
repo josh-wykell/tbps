@@ -55,14 +55,14 @@
   <div class="form-group">
     <%= f.label :state, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :home_address_state, class: "form-control" %>
+      <%= f.select :home_address_state, options_for_select(us_states, "FL"), class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :zip_code, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :home_address_zip, class: "form-control" %>
+      <%= f.text_field :home_address_zip, :maxlength => 5, :size => 5, class: "form-control" %>
     </div>
   </div>
 
@@ -87,56 +87,56 @@
   <div class="form-group">
     <%= f.label :state, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :office_address_state, class: "form-control" %>
+      <%= f.select :office_address_state, options_for_select(us_states, "FL"), class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :zip_code, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :office_address_zip, class: "form-control" %>
+      <%= f.text_field :office_address_zip, :maxlength => 5, :size => 5, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :email, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :email, class: "form-control" %>
+      <%= f.email_field :email, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :office_phone, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :office_phone, class: "form-control" %>
+      <%= f.telephone_field :office_phone, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :cell_pohone, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :cell_phone, class: "form-control" %>
+      <%= f.telephone_field :cell_phone, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :home_phone, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      (will not be published)<%= f.text_field :home_phone, class: "form-control" %>
+      (will not be published)<%= f.telephone_field :home_phone, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :fax, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :fax, class: "form-control" %>
+      <%= f.telephone_field :fax, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :date_of_birth, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.date_select :birth_date, class: "form-control" %>
+      <%= f.date_select :birth_date, :start_year=> 1915, :end_year=> 2015, class: "form-control" %>
     </div>
   </div>
 
