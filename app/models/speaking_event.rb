@@ -1,10 +1,7 @@
 class SpeakingEvent < ActiveRecord::Base
   belongs_to :speaker
-  has_many :sale_items, as: :sellable
+  has_many :sale_items
 
-  def title
-    speaker.name
-  end
 end
 
 

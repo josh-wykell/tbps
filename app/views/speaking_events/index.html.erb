@@ -34,12 +34,12 @@
           <td><%= number_to_currency(speaking_event.regular_price) %></td>
         <% end %>
         <td><%= speaking_event.speaker.name %></td>
-        <td><%= link_to "Add to Cart", sale_items_path(sale_item:{sellable_id: speaking_event.id, sellable_type: "SpeakingEvent", cart_id: current_cart}), method:'post' %></td>
+        <td><%= link_to "Add to Cart", sale_items_path(:speaking_event_id => speaking_event), method:'post' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-
+<%= link_to 'checkout', current_cart_path %>
 <br>
 

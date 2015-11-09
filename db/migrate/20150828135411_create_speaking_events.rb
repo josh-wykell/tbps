@@ -7,10 +7,12 @@ class CreateSpeakingEvents < ActiveRecord::Migration
       t.string :city
       t.integer :zipcode
       t.text :description
-      t.decimal :price
+      t.decimal :regular_price
+      t.decimal :member_price
       t.belongs_to :speaker, index: true, foreign_key: true
 
       t.timestamps null: false
     end
   end
 end
+

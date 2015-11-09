@@ -4,6 +4,7 @@ class CreateMemberships < ActiveRecord::Migration
       t.string :card_token
       t.string :email
       t.datetime :purchased_at
+      t.belongs_to :member, index: true, foreign_key: true
 
       t.timestamps null: false
     end

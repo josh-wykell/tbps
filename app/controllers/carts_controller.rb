@@ -34,6 +34,6 @@ class CartsController < InheritedResources::Base
 
 
     def cart_params
-      params.permit :purchased_at
+      params.permit :purchased_at, :email, :card_token, :buyer_name, :zipcode, :city, :state, :country, :street_address
     end
 end

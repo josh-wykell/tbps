@@ -18,12 +18,11 @@ class CreateMembers < ActiveRecord::Migration
       t.string :fax
       t.string :cell_phone
       t.string :home_phone
-      t.integer :birth_day
-      t.string :birth_month
-      t.integer :birth_year
+      t.date :birth_date
       t.text :practice_specialities
       t.boolean :publish, null: false, default: false
       t.boolean :new_patients, null: false, default: false
+      t.string :membership_type
 
       t.timestamps null: false
     end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104162026) do
+ActiveRecord::Schema.define(version: 20151029222416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,16 +60,16 @@ ActiveRecord::Schema.define(version: 20151104162026) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "purchased_at"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "buyer_name"
     t.string   "email"
     t.string   "card_token"
-    t.string   "street_address"
+    t.string   "buyer_name"
     t.string   "zipcode"
     t.string   "city"
     t.string   "state"
     t.string   "country"
+    t.string   "street_address"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "films", force: :cascade do |t|
@@ -101,23 +101,22 @@ ActiveRecord::Schema.define(version: 20151104162026) do
     t.string   "fax"
     t.string   "cell_phone"
     t.string   "home_phone"
+    t.date     "birth_date"
     t.text     "practice_specialities"
     t.boolean  "publish",               default: false, null: false
     t.boolean  "new_patients",          default: false, null: false
+    t.string   "membership_type"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
-    t.date     "birth_date"
-    t.string   "membership_type"
   end
 
   create_table "memberships", force: :cascade do |t|
     t.string   "card_token"
     t.string   "email"
     t.datetime "purchased_at"
+    t.integer  "member_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "type"
-    t.integer  "member_id"
   end
 
   add_index "memberships", ["member_id"], name: "index_memberships_on_member_id", using: :btree
@@ -135,14 +134,16 @@ ActiveRecord::Schema.define(version: 20151104162026) do
   end
 
   create_table "sale_items", force: :cascade do |t|
-    t.integer  "sellable_id"
-    t.string   "sellable_type"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
     t.integer  "cart_id"
+    t.integer  "speaking_event_id"
+    t.integer  "quantity"
+    t.decimal  "unit_price"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
-  add_index "sale_items", ["sellable_type", "sellable_id"], name: "index_sale_items_on_sellable_type_and_sellable_id", using: :btree
+  add_index "sale_items", ["cart_id"], name: "index_sale_items_on_cart_id", using: :btree
+  add_index "sale_items", ["speaking_event_id"], name: "index_sale_items_on_speaking_event_id", using: :btree
 
   create_table "speakers", force: :cascade do |t|
     t.string   "name"
@@ -161,10 +162,10 @@ ActiveRecord::Schema.define(version: 20151104162026) do
     t.integer  "zipcode"
     t.text     "description"
     t.decimal  "regular_price"
+    t.decimal  "member_price"
     t.integer  "speaker_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.decimal  "member_price"
   end
 
   add_index "speaking_events", ["speaker_id"], name: "index_speaking_events_on_speaker_id", using: :btree
@@ -189,5 +190,8 @@ ActiveRecord::Schema.define(version: 20151104162026) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "cart_membership_statuses", "carts"
+  add_foreign_key "memberships", "members"
+  add_foreign_key "sale_items", "carts"
+  add_foreign_key "sale_items", "speaking_events"
   add_foreign_key "speaking_events", "speakers"
 end
