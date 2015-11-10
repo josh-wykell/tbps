@@ -2,6 +2,7 @@ class Cart < ActiveRecord::Base
   has_many :sale_items
   has_one :cart_membership_status
   accepts_nested_attributes_for :cart_membership_status
+  accepts_nested_attributes_for :sale_items
   after_save :mark_cart_as_purchased
 
   def total_price

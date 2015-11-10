@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :carts do
     resources :cart_membership_statuses
+    resources :sale_items
   end
-  resources :sale_items
   resources :speaking_events
   resources :other_events
   resources :films

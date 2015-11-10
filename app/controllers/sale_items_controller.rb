@@ -10,14 +10,21 @@ class SaleItemsController < InheritedResources::Base
     @sale_item = SaleItem.create!(:cart => current_cart, :speaking_event => @speaking_event, :quantity => 1, :unit_price => @price)
     flash[:notice] = "Added #{@speaking_event.speaker.name} at #{@speaking_event.time} to cart"
     redirect_to speaking_events_path
-
   end
 
-  # def destroy
-  #   @sale_item = SaleItem.find(params[:id])
-  #   @sale_item.destroy
-  #   redirect_to current_cart_path
-  # end
+  def update
+    @cart = Cart.find(params[:cart_id])
+    @sale_item = @cart.sale_items.find(params[:id])
+    @sale_item.quantity = params[:sale_item][:quantity]
+    redirect_to current_cart_path
+  end
+
+  def destroy
+    @cart = Cart.find(params[:cart_id])
+    @sale_item = @cart.sale_items.find(params[:id])
+    @sale_item.destroy
+    redirect_to current_cart_path
+  end
 
   private
 

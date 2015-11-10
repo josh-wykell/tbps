@@ -10,6 +10,31 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
+
+ @import "framework_and_overrides";
+ 
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 100px 30px 0px 30px;
+}
+
+//Navbar Styling
+
+
+
+.navbar > .container-fluid {
+  display: inline-block;
+  float: none;
+  text-align: center;
+  vertical-align: top; 
+}
+
+.navbar {
+  text-align: center;
+}
