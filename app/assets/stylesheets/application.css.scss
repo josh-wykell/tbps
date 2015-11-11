@@ -41,7 +41,9 @@ body {
 //Root Page
 
 .landing_page_layout {
-  margin: 25px 0 25px 0;
+  border: 2px solid;
+  border-radius: 6px;
+  margin: 25px 25px 25px 25px;
   max-height: 400px;
   min-height: 400px;
   padding: 20px;

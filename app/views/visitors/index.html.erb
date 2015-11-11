@@ -1,42 +1,37 @@
 
-<div class="landing_page_layout col-md-6">
+<div class="landing_page_layout col-md-5">
   <% @current_speaking_events.each do |event| %>
-    <h3>Our Next Speaker <%= event.speaker.name %></h3>
-    <h4>Will be speaking on <%= event.date %></h4>
-    <p><%= truncate event.description, length: 300, separator: ' ' %><p>
-    <h4><%= link_to 'For more information on this event click here', speaking_event_path(event) %></h4>
+    <h3><%= link_to "#{event.speaker.name}", speaker_path(event.speaker) %></h3>
+    <h4>Our next speaker <%= event.speaker.name %> will be speaking on <%= event.date.strftime("%A, %B %e, %Y") %>.</h4>
+    <p><%= truncate event.description, length: 300, separator: ' ' %><%= link_to 'For more information on this event click here', speaking_event_path(event) %></p>
     <% if current_cart.cart_membership_status %>
-      <h4><%= link_to 'Click here for a list of all our speaking events', speaking_events_path %></h3>
+      <h4><%= link_to 'Click here for a list of all our speaking events', speaking_events_path %></h4>
     <% else %>
       <h4><%= link_to 'Click here for a list of all our speaking events', new_cart_cart_membership_status_path(current_cart) %></h4>
     <% end %>
   <% end %>
 </div>
 
-<div class="landing_page_layout col-md-6">
-  <h3><%= link_to 'Next Film', films_path %></h3>
+<div class="landing_page_layout col-md-5">
   <% @current_films.each do |film| %>
-    <%= film.title %>
-    <%= film.date %>
-    <%= film.time %>
-    <%= film.first_speaker %>
-    <%= film.second_speaker %>
-    <%= truncate film.synopsis, length: 100, separator: ' ' %>
-    <%= link_to 'Show', film %>
+    <h3><%= link_to "#{film.title}", film_path(film) %></h3>
+    <h4>The next film in the TBPS film series is <%= film.title %>.</h4>
+    <h5> All of our films are shown at Magick Venue. <%= film.title %> will be shown on <%= film.date.strftime("%A, %B %e, %Y") %> at <%= film.time.strftime("%I:%M %P") %>. Before the film <%= film.first_speaker %> will be conducting a brief talk, and after the movie <%= film.second_speaker %> will do a follow up discussion.</h5>
+    <p><%= truncate film.synopsis, length: 300, separator: ' ' %><%= link_to 'Full synopsis', film_path(film) %><p>
+    <h4><%= link_to 'Click here for a complete list of our film series', films_path %></h4>
   <% end %>
 </div>
 
-<div class="landing_page_layout col-md-6">
-  <h3><%= link_to 'Other Events', other_events_path %></h3>
+<div class="landing_page_layout col-md-5">
+  <h3><%= link_to 'Other TBPS Events', other_events_path %></h3>
   <% @current_other_events.each do |event| %>
-    <%= event.title %>
-    <%= event.date %>
-    <%= event.time %>
-    <%= truncate event.description, length: 100, separator: ' ' %>
+    <h4>Our next non-lecture/non-film event will be <%= event.title %> on <%= event.date.strftime("%A, %B %e, %Y") %> at <%= event.time.strftime("%I:%M %P") %></h4>
+    <p><%= truncate event.description, length: 300, separator: ' ' %><%= link_to 'full details here', other_event_path(event) %></p>
+    <h4><%= link_to 'Click her for a complete list of other TBPS events', other_events_path %></h4>
    <% end %> 
 </div>
 
-<div class="landing_page_layout col-md-6">
+<div class="landing_page_layout col-md-5">
   <h3><%= link_to 'Member Directory', members_path %></h3>
 </div>
 
