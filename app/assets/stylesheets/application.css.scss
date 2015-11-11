@@ -14,14 +14,13 @@
  */
 
  @import "framework_and_overrides";
- 
+
 html {
   min-height: 100%;
   position: relative;
 }
 
 body {
-  margin: 100px 30px 0px 30px;
 }
 
 //Navbar Styling
@@ -37,4 +36,13 @@ body {
 
 .navbar {
   text-align: center;
+}
+
+//Root Page
+
+.landing_page_layout {
+  margin: 25px 0 25px 0;
+  max-height: 400px;
+  min-height: 400px;
+  padding: 20px;
 }
