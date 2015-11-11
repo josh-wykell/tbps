@@ -21,6 +21,20 @@ html {
 }
 
 body {
+  h1 h2 h3 h4 h5 {
+    font-family: 'Lato', sans-serif;
+  }
+  p {
+    font-family: 'Alegreya', serif;
+  }
+  a {
+    color: #395a2a;
+  }
+  background: linear-gradient(#404e6d, #4f6187);
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
 }
 
 //Navbar Styling
@@ -28,6 +42,7 @@ body {
 
 
 .navbar > .container-fluid {
+  background-color: #8caf5a;
   display: inline-block;
   float: none;
   text-align: center;
@@ -38,9 +53,18 @@ body {
   text-align: center;
 }
 
+.navbar h1 {
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar a {
+  color: #f9f1f1; 
+}
+
 //Root Page
 
 .landing_page_layout {
+  background-color: #e7ebe6;
   border: 2px solid;
   border-radius: 6px;
   margin: 25px 25px 25px 25px;

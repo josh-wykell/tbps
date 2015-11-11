@@ -3,7 +3,7 @@
   <% @current_speaking_events.each do |event| %>
     <h3><%= link_to "#{event.speaker.name}", speaker_path(event.speaker) %></h3>
     <h4>Our next speaker <%= event.speaker.name %> will be speaking on <%= event.date.strftime("%A, %B %e, %Y") %>.</h4>
-    <p><%= truncate event.description, length: 300, separator: ' ' %><%= link_to 'For more information on this event click here', speaking_event_path(event) %></p>
+    <p><%= truncate event.speaker.biography, length: 300, separator: ' ' %><%= link_to "For more information on #{event.speaker.name}, and his talks click here", speaker_path(event.speaker) %></p>
     <% if current_cart.cart_membership_status %>
       <h4><%= link_to 'Click here for a list of all our speaking events', speaking_events_path %></h4>
     <% else %>
@@ -35,5 +35,4 @@
   <h3><%= link_to 'Member Directory', members_path %></h3>
 </div>
 
-<%= link_to 'about', page_path('about') %>
 

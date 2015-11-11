@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Tbps" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Tbps" %>">
+    <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -26,18 +28,23 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
              <ul class="nav nav-tabs nav-justified">
-              <li>About Us</li>
-              <li>Member Directory</li>
-              <li>Become A Member</li>
-              <li>Speaker Events</li>
-              <li>Film Series</li>
-              <li>Meetings</li>
-              <li>Other</li>
+              <li><%= link_to 'About Us', page_path('about') %></li>
+              <li><%= link_to 'Member Directory', members_path %></li>
+              <li><%= link_to 'Become A Member', new_member_path %></li>
+              <% if current_cart.cart_membership_status %>
+                <li><%= link_to 'Speaker Events', speaking_events_path %></li>
+              <% else %>
+                <li><%= link_to 'Speaker Events', new_cart_cart_membership_status_path(current_cart) %></li>
+              <% end %>
+              <li><%= link_to 'Film Series', films_path %></li>
+              <li><%= link_to 'Reading Groups', page_path('reading_groups') %></li>
+              <li><%= link_to 'Other TBPS Events', other_events_path %></li>
              </ul>
           </div>
         </div>
       </div>
     </nav> 
+
     <div class="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
