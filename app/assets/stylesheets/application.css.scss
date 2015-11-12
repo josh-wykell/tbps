@@ -30,7 +30,7 @@ body {
   a {
     color: #395a2a;
   }
-  background: linear-gradient(#404e6d, #4f6187);
+  background: linear-gradient(#00db8f, #14faaa);
 }
 
 h1 {
@@ -39,36 +39,72 @@ h1 {
 
 //Navbar Styling
 
-
-
-.navbar > .container-fluid {
-  background-color: #8caf5a;
-  display: inline-block;
-  float: none;
-  text-align: center;
-  vertical-align: top; 
+.list_item {
+  text-align: left;
 }
 
-.navbar {
+.list-group {
+  float: right;
+}
+
+.navbar > .container-fluid {
+  // display: inline-block;
+  float: none;
+  vertical-align: top; 
+  color: #f9f1f1;
+}
+
+.nav_center {
+  margin: 30px 0 0 300px;
   text-align: center;
+  max-width: auto;
+}
+
+.nav_center_text {
+  text-align: left;
+}
+
+.navbar-default{
+  background: transparent;
+  border: none;
 }
 
 .navbar h1 {
   font-family: 'Lato', sans-serif;
+  font-size: 64pt;
 }
 
 .navbar a {
   color: #f9f1f1; 
 }
 
+.tbps_brand{
+  display: inline-block;
+  float: left;
+}
+
 //Root Page
 
+.mission_statement {
+  font-family: 'Oswald', sans-serif;
+  float: left;
+}
+
+.join_tbps{
+   a {
+    color: #cd519b;
+    text-align: right;
+   }
+  float: right;
+  padding: 0 0 0 15px;
+}
+
 .landing_page_layout {
-  background-color: #e7ebe6;
+  background: linear-gradient(#fdf7f9, #f7e3ea);
   border: 2px solid;
   border-radius: 6px;
   margin: 25px 25px 25px 25px;
-  max-height: 400px;
-  min-height: 400px;
+  max-height: 300px;
+  min-height: 300px;
   padding: 20px;
 }

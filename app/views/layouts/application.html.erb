@@ -6,6 +6,7 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Tbps" %>">
     <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -23,24 +24,30 @@
           </button>
 
           <div class="tbps_brand">
-            <h1><%= link_to "Tampa Bay Psychoanalytic Society", "/" %></h1>
+            <h1><%= link_to "TBPS", "/" %></h1>
+            <h6>Tampa Bay Psychoanalytic Society</h6>
           </div>
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
-             <ul class="nav nav-tabs nav-justified">
-              <li><%= link_to 'About Us', page_path('about') %></li>
-              <li><%= link_to 'Member Directory', members_path %></li>
-              <li><%= link_to 'Become A Member', new_member_path %></li>
-              <% if current_cart.cart_membership_status %>
-                <li><%= link_to 'Speaker Events', speaking_events_path %></li>
-              <% else %>
-                <li><%= link_to 'Speaker Events', new_cart_cart_membership_status_path(current_cart) %></li>
-              <% end %>
-              <li><%= link_to 'Film Series', films_path %></li>
-              <li><%= link_to 'Reading Groups', page_path('reading_groups') %></li>
-              <li><%= link_to 'Other TBPS Events', other_events_path %></li>
-             </ul>
-          </div>
+            <div class="nav_center">
+              <div class="nav_center_text">
+                <h4><span class="list_tem"><%= link_to 'Member Directory', members_path %></span><br>
+                <span class="list_item"><%= link_to 'Film Series', films_path %></span><br>
+                <% if current_cart.cart_membership_status %>
+                  <span class="list_item"><%= link_to 'Speaker Events', speaking_events_path %></span>
+                <% else %>
+                  <span class="list_item"><%= link_to 'Speaker Events', new_cart_cart_membership_status_path(current_cart) %></span></h4>
+                <% end %>
+              </div>
+            </div>
+<!--             <div class="navbar-right">
+ -->              <ul class="nav navbar-nav pull-right">
+                <li class="list-group-item"><%= link_to 'About Us', page_path('about') %></li>
+                <li class="list-group-item"><%= link_to 'Reading Groups', page_path('reading_groups') %></li>
+                <li class="list-group-item"><%= link_to 'Other TBPS Events', other_events_path %></li>
+              </ul>
+<!--             </div>
+ -->          </div>
         </div>
       </div>
     </nav> 

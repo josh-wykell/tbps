@@ -1,3 +1,10 @@
+<div class="mission_statement">
+  <h3>We are a non-profit, all volunteer, member based organization dedicated to the advancedment of Psychotherapists.</h3>
+</div>
+
+<div class="join_tbps col-md-7">
+  <h3><%= link_to 'Join The Tampa Bay Psychoanalytic Society Now. Receive benefits and discounts', new_member_path %></h3>
+</div>
 
 <div class="landing_page_layout col-md-5">
   <% @current_speaking_events.each do |event| %>
@@ -17,10 +24,14 @@
     <h3><%= link_to "#{film.title}", film_path(film) %></h3>
     <h4>The next film in the TBPS film series is <%= film.title %>.</h4>
     <h5> All of our films are shown at Magick Venue. <%= film.title %> will be shown on <%= film.date.strftime("%A, %B %e, %Y") %> at <%= film.time.strftime("%I:%M %P") %>. Before the film <%= film.first_speaker %> will be conducting a brief talk, and after the movie <%= film.second_speaker %> will do a follow up discussion.</h5>
-    <p><%= truncate film.synopsis, length: 300, separator: ' ' %><%= link_to 'Full synopsis', film_path(film) %><p>
+    <p><%= truncate film.synopsis, length: 100, separator: ' ' %><%= link_to 'Full synopsis', film_path(film) %><p>
     <h4><%= link_to 'Click here for a complete list of our film series', films_path %></h4>
   <% end %>
 </div>
+
+<div class="landing_page_layout col-md-5">
+  <h3><%= link_to 'Member Directory', members_path %></h3>
+</div>  
 
 <div class="landing_page_layout col-md-5">
   <h3><%= link_to 'Other TBPS Events', other_events_path %></h3>
@@ -31,8 +42,6 @@
    <% end %> 
 </div>
 
-<div class="landing_page_layout col-md-5">
-  <h3><%= link_to 'Member Directory', members_path %></h3>
-</div>
+
 
 
