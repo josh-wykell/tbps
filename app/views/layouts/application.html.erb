@@ -16,39 +16,50 @@
       <div class="container-fluid">
         <div class="navbar-header">
 
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
 
-          <div class="tbps_brand">
+          <div class="navbar-brand tbps_brand">
             <h1><%= link_to "TBPS", "/" %></h1>
             <h6>Tampa Bay Psychoanalytic Society</h6>
           </div>
+        </div>
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
             <div class="nav_center">
               <div class="nav_center_text">
-                <h4><span class="list_tem"><%= link_to 'Member Directory', members_path %></span><br>
-                <span class="list_item"><%= link_to 'Film Series', films_path %></span><br>
-                <% if current_cart.cart_membership_status %>
-                  <span class="list_item"><%= link_to 'Speaker Events', speaking_events_path %></span>
-                <% else %>
-                  <span class="list_item"><%= link_to 'Speaker Events', new_cart_cart_membership_status_path(current_cart) %></span></h4>
-                <% end %>
+                <table>
+                  <tr>
+                    <td><h4><%= link_to 'Member Directory', members_path %></h4></td>
+                  </tr>
+                  <tr>
+                    <td><h4><%= link_to 'Film Series', films_path %></h4></td>
+                  </tr>
+                  <tr>
+                    <% if current_cart.cart_membership_status %>
+                      <td><h4><%= link_to 'Speaker Events', speaking_events_path %><h4></td>
+                    <% else %>
+                      <td><h4><%= link_to 'Speaker Events', new_cart_cart_membership_status_path(current_cart) %></h4></td>
+                    <% end %>
+                  </tr>
+                </table>
               </div>
             </div>
-<!--             <div class="navbar-right">
- -->              <ul class="nav navbar-nav pull-right">
-                <li class="list-group-item"><%= link_to 'About Us', page_path('about') %></li>
-                <li class="list-group-item"><%= link_to 'Reading Groups', page_path('reading_groups') %></li>
-                <li class="list-group-item"><%= link_to 'Other TBPS Events', other_events_path %></li>
-              </ul>
-<!--             </div>
- -->          </div>
-        </div>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="nav"><%= link_to 'About Us', page_path('about') %></li><br>
+              <li class="nav"><%= link_to 'Reading Groups', page_path('reading_groups') %></li><br>
+              <li class="nav"><%= link_to 'Other TBPS Events', other_events_path %></li>
+            </ul><br>
+
+            <div class="join_tbps col-md-7">
+              <h4><em><%= link_to 'Join the TBPS now to receive benefits and discounts', new_member_path %></em></h4>
+            </div>
+          </div>
       </div>
     </nav> 
 

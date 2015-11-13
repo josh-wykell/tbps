@@ -2,10 +2,6 @@
   <h3>We are a non-profit, all volunteer, member based organization dedicated to the advancedment of Psychotherapists.</h3>
 </div>
 
-<div class="join_tbps col-md-7">
-  <h3><%= link_to 'Join The Tampa Bay Psychoanalytic Society Now. Receive benefits and discounts', new_member_path %></h3>
-</div>
-
 <div class="landing_page_layout col-md-5">
   <% @current_speaking_events.each do |event| %>
     <h3><%= link_to "#{event.speaker.name}", speaker_path(event.speaker) %></h3>
