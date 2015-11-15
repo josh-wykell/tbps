@@ -53,12 +53,14 @@ h1 {
   float: right;
   // margin: 3px 0 0 0;
   padding: none;
-  width: 525px;
+  width: 650px;
   a {
-    color: #FF0000 !important;
+    color: #A30000 !important;
     text-align: right;
+    font-weight: bold;
   }
-  h4 {
+  h3 {
+    font-family: 'Alegreya', serif;
     margin: 40px 0 0 0;
   }
 }
@@ -74,7 +76,6 @@ h1 {
 
 .navbar > .container-fluid {
   vertical-align: top; 
-  // color: #f9f1f1;
   text-align: center
 }
 
@@ -129,7 +130,7 @@ h1 {
   clear: none;
   padding: 0 15px 15px 15px;
   h1 {
-    font-family: 'Corben', cursive;
+    // font-family: 'Corben', cursive;
     } 
   h5 {
     color: #f0f0ef;
@@ -147,9 +148,11 @@ h1 {
 }
 
 .landing_page_layout {
-  background: linear-gradient(#f8f8f7, #c9c9c5);
-  border: 2px solid;
-  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(200, 200, 192, 1), rgba(248, 248, 247, 1), 
+    rgba(248, 248, 247, 1), rgba(248, 248, 247, 1.0), rgba(0, 205, 255, 0.5), rgba(0, 205, 255, 0.5));  
+  // border-left: 2px solid;
+  // border-top: 2px solid;
+  border-radius: 12px;
   max-height: 400px;
   min-height: 400px;
   overflow: auto;
@@ -157,11 +160,15 @@ h1 {
 }
 
 .lp1 {
-  margin: 0 8px 0 -8px;
+  margin: 0 8px 2px -8px;
+}
+
+.lp2 {
+  margin: 0 0 2px 0;
 }
 
 .lp3 {
-  margin: 0 -8px 0 8px;
+  margin: 0 -8px 2px 8px;
 }
 
 .mission_statement {
