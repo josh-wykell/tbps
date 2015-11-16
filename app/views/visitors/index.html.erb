@@ -4,25 +4,52 @@
 
 <div class="home_main">
   <div class="landing_page_layout col-md-4 center-block lp1">
+    <% if current_cart.cart_membership_status %>
+      <h3><%= link_to 'Scientific Speaker Programs 2015-2016', speaking_events_path %></h3>
+    <% else %>
+      <h3><%= link_to 'Scientific Speaker Programs 2015-2016', new_cart_cart_membership_status_path(current_cart) %></h3>
+    <% end %>
+    <h5>TBPS presents thought leaders and clinicians in the field of psychotharpy on one Saturday each month</h5>
     <% @current_speaking_events.each do |event| %>
-      <h3><%= link_to "#{event.speaker.name}", speaker_path(event.speaker) %></h3>
-      <h4>Our next speaker <%= event.speaker.name %> will be speaking on <%= event.date.strftime("%A, %B %e, %Y") %>.</h4>
+      <h4>Our next speaker <%= link_to "#{event.speaker.name}", speaker_path(event.speaker) %> will be speaking on <%= event.date.strftime("%A, %B %e, %Y") %>.</h4>
       <p><%= truncate event.speaker.biography, length: 300, separator: ' ' %><%= link_to "For more information on #{event.speaker.name}, and his talks click here", speaker_path(event.speaker) %></p>
       <% if current_cart.cart_membership_status %>
-        <h4><%= link_to 'Click here for a list of all our speaking events', speaking_events_path %></h4>
+        <h4><%= link_to 'Click here to see a list of all our speaking events, or to register for a talk', speaking_events_path %></h4>
       <% else %>
-        <h4><%= link_to 'Click here for a list of all our speaking events', new_cart_cart_membership_status_path(current_cart) %></h4>
+        <h4><%= link_to 'Click here to see  a list of all our speaking events, or to register for a talk', new_cart_cart_membership_status_path(current_cart) %></h4>
       <% end %>
     <% end %>
   </div>
 
   <div class="landing_page_layout col-md-4 center-block lp2">
+    <h3><%= link_to 'TBPS Film Seris', films_path %></h3>
     <% @current_films.each do |film| %>
-      <h3><%= link_to "#{film.title}", film_path(film) %></h3>
-      <h4>The next film in the TBPS film series is <%= film.title %>.</h4>
-      <h5> All of our films are shown at Magick Venue. <%= film.title %> will be shown on <%= film.date.strftime("%A, %B %e, %Y") %> at <%= film.time.strftime("%I:%M %P") %>. Before the film <%= film.first_speaker %> will be conducting a brief talk, and after the movie <%= film.second_speaker %> will do a follow up discussion.</h5>
+      <h5> The TBPS presents a monthly Sunday afternoon film series. Each film is an informal and convivial viewing followed by a discussion facilitated by an academic in film and/or humanities, and a psychoanalytic psychotharapy clinician. All films are shown at the Auditorium located at 13919 Carrollwood Village Run, Tampa 33618.</h5>
+      <h3> A $2 Donation is requested at the door.</h3>
+      <table>
+        <thead>
+          <tr>
+            <h4>Our Next Film</h4>
+          </tr>
+          <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Discusion Facilitated By</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= link_to "#{film.title}", films_path(film) %></td>
+            <td><%= film.date.strftime("%m/%d/%y") %></td>
+            <td><%= film.time.strftime("%I:%M %P") %></td>
+            <td><%= film.first_speaker %> & <%= film.second_speaker %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Synopsis</h4>
       <p><%= truncate film.synopsis, length: 100, separator: ' ' %><%= link_to 'Full synopsis', film_path(film) %><p>
-      <h4><%= link_to 'Click here for a complete list of our film series', films_path %></h4>
+      <h4><%= link_to 'Click here for a complete listing of our film series', films_path %></h4>
     <% end %>
   </div>
 

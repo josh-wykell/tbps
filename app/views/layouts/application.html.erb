@@ -33,21 +33,15 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
             <div class="nav_center">
               <div class="nav_center_text">
-                <table>
-                  <tr>
-                    <td><h4><%= link_to 'Member Directory', members_path %></h4></td>
-                  </tr>
-                  <tr>
-                    <td><h4><%= link_to 'Film Series', films_path %></h4></td>
-                  </tr>
-                  <tr>
-                    <% if current_cart.cart_membership_status %>
-                      <td><h4><%= link_to 'Speaker Events', speaking_events_path %><h4></td>
-                    <% else %>
-                      <td><h4><%= link_to 'Speaker Events', new_cart_cart_membership_status_path(current_cart) %></h4></td>
-                    <% end %>
-                  </tr>
-                </table>
+                <ul class= "nav nav-pills">
+                  <li class="nav navbar-nav"><%= link_to 'Member Directory', members_path %></li>
+                  <li class="nav navbar-nav"><%= link_to 'Film Series', films_path %></li>
+                  <% if current_cart.cart_membership_status %>
+                    <li class="navbar"><%= link_to 'Speaker Events', speaking_events_path %></li>
+                  <% else %>
+                    <li class="navbar"><%= link_to 'Speaker Events', new_cart_cart_membership_status_path(current_cart) %></h4></li>
+                  <% end %>
+                </ul>
               </div>
             </div>
 

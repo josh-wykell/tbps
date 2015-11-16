@@ -1,13 +1,24 @@
-<h2>Are you a member of the Tampa Bay Psychoanalytic Society?</h2>
-<%= form_for ([@cart_membership_status.cart, @cart_membership_status]) do |f| %>
-  <div class="form-group">
-    <%= f.label :is_a_member, "Yes", :value => "true" %>
-    <%= f.radio_button :is_a_member, true %>
-    <%= f.label :is_a_member, "No", :value => "false" %>
-    <%= f.radio_button :is_a_member, false, :checked => true %>
-  </div>
+<div class="membership_status_form">
+  <h2>Are you a member of the Tampa Bay Psychoanalytic Society?</h2>
+</div>
 
-  <%= f.submit "Continue" %>
-<% end %>
+<div class="col-md-3"></div>
 
-<%= link_to 'Become a member now', new_member_path %>
+<div class="col-md-6 center-block membership_status_form">
+  <%= form_for ([@cart_membership_status.cart, @cart_membership_status]) do |f| %>
+    <div class="form-group">
+     <h4><%= f.label :is_a_member, "Yes", :value => "true", class: "radio-inline"%>
+      <%= f.radio_button :is_a_member, true, class: "radio-inline"%>
+      <h4><%= f.label :is_a_member, "No", :value => "false", class: "radio-inline" %>
+      <%= f.radio_button :is_a_member, false, :checked => true, class: "radio-inline" %></h4>
+    </div>
+
+    <div class= "form-group">
+      <%= f.submit "Continue" %>
+    </div>
+  <% end %>
+
+  <h4><%= link_to 'Become a member now', new_member_path %></h4>
+<div>
+
+<div class="col-md-3"></div>
