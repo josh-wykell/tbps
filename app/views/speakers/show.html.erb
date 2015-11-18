@@ -1,16 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @speaker.name %>
-</p>
+<div class="col-md-3 speaking_events_layout bio">
+  <h2><%= @speaker.name %></h2>
 
-<p>
-  <strong>Biography:</strong>
-  <%= @speaker.biography %>
-</p>
+  <p>
+    <strong>Biography:</strong>
+    <%= @speaker.biography %>
+  </p>
+</div>
 
 <div>
+
+<div class="col-md-9 speaking_events_layout speaker_events">
   <strong>Speaking Events</strong>
     <table>
       <thead>
@@ -26,29 +27,30 @@
         </tr>
       </thead>
 
-  <tbody>
-    <% @speaking_events.each do |speaking_event| %>
-      <tr>
-        <td><%= speaking_event.date.strftime("%A, %B %e, %Y") %></td>
-        <td><%= speaking_event.time.strftime("%I:%M %P") %></td>
-        <td><%= speaking_event.street_address %></td>
-        <td><%= speaking_event.city %></td>
-        <td><%= speaking_event.zipcode %></td>
-        <td><%= speaking_event.description %></td>
-        <% @cart=current_cart %>
-        <% if @cart.cart_membership_status.is_a_member %>
-          <td><%= number_to_currency(speaking_event.member_price) %></td>
-        <% else %>
-          <td><%= number_to_currency(speaking_event.regular_price) %></td>
-        <% end %>
-        <td><%= speaking_event.speaker.name %></td>
-        <td><%= link_to "Add to Cart", cart_sale_items_path(current_cart, :speaking_event_id => speaking_event), :method => :post %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <tbody>
+      <% @speaking_events.each do |speaking_event| %>
+        <tr>
+          <td><%= speaking_event.date.strftime("%A, %B %e, %Y") %></td>
+          <td><%= speaking_event.time.strftime("%I:%M %P") %></td>
+          <td><%= speaking_event.street_address %></td>
+          <td><%= speaking_event.city %></td>
+          <td><%= speaking_event.zipcode %></td>
+          <td><%= link_to "#{truncate speaking_event.description, length: 100, separator: ' '}", speaking_event_path(speaking_event) %></td>
+          <% @cart=current_cart %>
+          <% if @cart.cart_membership_status.is_a_member %>
+            <td><%= number_to_currency(speaking_event.member_price) %></td>
+          <% else %>
+            <td><%= number_to_currency(speaking_event.regular_price) %></td>
+          <% end %>
+          <td><%= speaking_event.speaker.name %></td>
+          <td><%= link_to "Add to Cart", cart_sale_items_path(current_cart, :speaking_event_id => speaking_event), :method => :post %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-
-
-<%= link_to 'Back', speakers_path %>
+<div class="col-md-11 checkout">
+  <a href="<%= current_cart_path %>" class="btn btn-primary" role="button">Review Your Order</a>
+  <a href="<%= speaking_events_path %>" class="btn btn-primary" role="button">All Speaking Events</a>
+</div>

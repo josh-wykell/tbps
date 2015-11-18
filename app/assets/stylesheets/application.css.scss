@@ -189,18 +189,9 @@ h1 {
 }
 
 //speaking_events_index
-.side_checkout {   
-  -webkit-transform: rotate(90deg); 
-     -moz-transform: rotate(90deg); 
-      -ms-transform: rotate(90deg); 
-       -o-transform: rotate(90deg); 
-          transform: rotate(90deg);
-            color: #000;
-            font-size: 22px;                
-            height: 200px;
-            width: 200px;
-            float: left;        
-            vertical-align:top;    
+
+.checkout {
+  text-align: right;
 }
 
 .speaking_events_layout {
@@ -225,7 +216,6 @@ background: linear-gradient(rgba(248, 248, 247, 1), rgba(248, 248, 247, 1),
     border-bottom: 1px solid black;
   }
   td {
-    // border-right: 1px solid black;
     min-width: 80px;
     max-height: 100px;
     padding: 2px;
@@ -236,38 +226,16 @@ background: linear-gradient(rgba(248, 248, 247, 1), rgba(248, 248, 247, 1),
   }
 }
 
-.tab-content {
-    overflow: auto;
+ .total {
+  min-width: 200px !important;
 }
 
-.tabs-vertical {
-  position: relative;
+//speakers
+
+.bio {
+  margin: 0 10px 0 -10px;
 }
 
-.tabs-vertical > .nav-tabs {
-    position: absolute;
-    top: 20px;
-    display: block;
-    width: auto;
-    height: 42px;
-    margin: 0;
-    white-space: nowrap;
-    border: 0 none;
-    -moz-transform-origin: 0 0;
-    -ms-transform-origin: 0 0;
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+.speaker_events {
+  clear: right;
 }
-
-.tabs-right > .nav-tabs {
-    float: right;
-    border-left: 1px solid black;
-}
-

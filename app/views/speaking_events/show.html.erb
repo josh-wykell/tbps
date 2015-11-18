@@ -1,48 +1,48 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Speaker:</strong>
-  <%= @speaking_event.speaker.name %>
-</p>
+<div class="speaking_events_layout">
+  <p>
+    <strong>Speaker:</strong>
+    <%= @speaking_event.speaker.name %>
+  </p>
 
-<p>
-  <strong>Biography</strong>
-  <%= @speaking_event.speaker.biography %>
-</p>
+  <p>
+    <strong>Date:</strong>
+    <%= @speaking_event.date %>
+  </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @speaking_event.date %>
-</p>
+  <p>
+    <strong>Time:</strong>
+    <%= @speaking_event.time.strftime("%I:%M %P") %>
+  </p>
 
-<p>
-  <strong>Time:</strong>
-  <%= @speaking_event.time %>
-</p>
+  <p>
+    <strong>Street address:</strong>
+    <%= @speaking_event.street_address %>
+  </p>
 
-<p>
-  <strong>Street address:</strong>
-  <%= @speaking_event.street_address %>
-</p>
+  <p>
+    <strong>City:</strong>
+    <%= @speaking_event.city %>
+  </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @speaking_event.city %>
-</p>
+  <p>
+    <strong>Zipcode:</strong>
+    <%= @speaking_event.zipcode %>
+  </p>
 
-<p>
-  <strong>Zipcode:</strong>
-  <%= @speaking_event.zipcode %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @speaking_event.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @speaking_event.description %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <%= number_to_currency(@speaking_event.regular_price) %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @speaking_event.regular_price %>
-</p>
-
-<%= link_to 'Back', speaking_events_path %>
+  <p>
+    <strong>Member Price:</strong>
+    <%= number_to_currency(@speaking_event.member_price) %>
+  </p>
+</div>

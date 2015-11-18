@@ -1,38 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<table id="line_items">
-  <tr>
-    <th>Product</th>
-    <th>Quantity</th>
-    <th class="price">Price</th>
-    <th>Subtotal</th>
-    <th></th>
-  </tr>
-  <% @cart.sale_items.each do |sale_item| %>
-    <tr class="<%= cycle :odd, :even %>">
-      <td><%= sale_item.speaking_event.speaker.name %></td>
-      <td>
-        <%= form_for :sale_item, :url => cart_sale_item_path(current_cart, sale_item), method: :put do |f| %>
-          <div class="field">
-            <%= f.number_field :quantity, :value => sale_item.quantity %>
-            <%= submit_tag 'Update' %>
-          </div>
-        <% end %>
-      </td>
-      <td><%= number_to_currency(sale_item.unit_price) %></td>
-      <td><%= number_to_currency(sale_item.subtotal) %></td>
-      <td><%= link_to cart_sale_item_path(@cart, sale_item), method: :delete, data: {confirm: 'Are you sure?'} do%>
-        <span>delete</span>
-        <% end %>
+<div class="col-md-1"></div>
+
+<div class="col-md-8 speaking_events_layout">
+  <table>
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Subtotal</th>
+      <th></th>
+    </tr>
+    <% @cart.sale_items.each do |sale_item| %>
+      <tr>
+        <td><%= sale_item.speaking_event.speaker.name %></td>
+        <td>
+          <%= form_for :sale_item, :url => cart_sale_item_path(current_cart, sale_item), method: :put do |f| %>
+            <div>
+              <%= f.number_field :quantity, :value => sale_item.quantity %>
+              <%= submit_tag 'Update' %>
+            </div>
+          <% end %>
+        </td>
+        <td><%= number_to_currency(sale_item.unit_price) %></td>
+        <td><%= number_to_currency(sale_item.subtotal) %></td>
+        <td><%= link_to cart_sale_item_path(@cart, sale_item), method: :delete, data: {confirm: 'Are you sure?'} do%>
+          <span>delete</span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+      <td class="total">
+        <h4>Total: <%= number_to_currency(@cart.total_price) %></h4>
       </td>
     </tr>
-  <% end %>
-  <tr>
-    <td class="total price" colspan="4">
-      Total: <%= number_to_currency(@cart.total_price) %>
-    </td>
-  </tr>
-</table>
+  </table>
+</div>
 
-<%= link_to 'Checkout', checkout_path %>
+<div class="col-md-3"></div>
 
+<div class="col-md-3"></div>
+
+<div class="col-md-8 checkout">
+  <a href="<%= checkout_path %>" class="btn btn-primary" role="button">Checkout</a>
+</div>
