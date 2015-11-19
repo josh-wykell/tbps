@@ -1,6 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<div class="col-md-1"></div>
+<h1>2015-2016 Speakers</h1>
+<% @speaking_events.in_groups_of(4) do |speaking_events| %>
+  <div class="row">
+    <% speaking_events.each do |speaking_event| %>
+      <div class="col-lg-3">
+        <div class="well">
+          <h4><%= link_to "#{speaking_event.speaker.name}", speaker_path(event.speaker) %></h4>
+          <h2><%=  %></h2>
+          <p><%= product.description %></p>
+          <%= format_money(product.price) %>
+          <%= render 'payola/transactions/checkout', sellable: product %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<br>
+
+<% @speaking_events.each do |speaking_event| %>
+
+
+<% end %>
 
 <div class="col-md-10 speaking_events_layout">
   <table>
@@ -19,7 +40,7 @@
     </thead>
 
     <tbody>
-      <% @speaking_events.each do |speaking_event| %>
+     
         <tr>
           <td><%= link_to "#{speaking_event.speaker.name}", speaking_event_path(speaking_event) %></td>
           <td><%= speaking_event.date.strftime("%m/%d/%y") %></td>

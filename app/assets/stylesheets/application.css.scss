@@ -133,6 +133,16 @@ h1 {
   margin: none;
 }
 
+.current_speaker_dates {
+  display: inline-block;
+  max-width: 170px
+}
+
+.current_speaker_layout {
+  display: inline-block;
+  max-width: 100px;
+}
+
 .home_main {
   margin: 70px 0 0 0;
 }

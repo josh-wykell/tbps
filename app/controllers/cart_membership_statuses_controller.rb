@@ -9,7 +9,7 @@ class CartMembershipStatusesController < InheritedResources::Base
     cart = Cart.find(params[:cart_id])
     @cart_membership_status = cart.create_cart_membership_status(cart_membership_status_params)
     @cart_membership_status.save
-    redirect_to speaking_events_path
+    redirect_to speakers_path
   end
 
   private
