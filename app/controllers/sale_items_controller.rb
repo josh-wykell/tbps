@@ -9,7 +9,7 @@ class SaleItemsController < InheritedResources::Base
       end
     @sale_item = SaleItem.create!(:cart => current_cart, :speaking_event => @speaking_event, :quantity => 1, :unit_price => @price)
     flash[:notice] = "Added #{@speaking_event.speaker.name} at #{@speaking_event.time} to cart"
-    redirect_to speaking_events_path
+    redirect_to :back
   end
 
   def update

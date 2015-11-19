@@ -10,7 +10,7 @@
           <h4>Theme: <%= speaker.theme %></h4>
           <h4><%= speaker.date.strftime("%B %e, %Y") %></h4>
           <h4>Bio:</h4>
-          <p><%= truncate speaker.biography, length: 50, separator: ' ' %> <%= link_to "For a full biography, event times, and prices click here.", speaker_path(speaker) %></p>
+          <p><%= truncate speaker.biography, length: 75, separator: ' ' %> <%= link_to "For a full biography, event times, and prices click here.", speaker_path(speaker) %></p>
         </div>
       </div>
     <% end %>
