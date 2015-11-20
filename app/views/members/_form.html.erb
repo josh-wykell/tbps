@@ -1,4 +1,8 @@
-<!-- add image tag for image -->
+<div class="member_form_header">
+  <h1>New Member Form</h1>
+  <p class="membership_explained">All members recieve discounted prices for TBPS talks. Clinical, Academic, and Life members also may receive up to 21 CE credit hours. If you elect to be published in the TBPS online member directory TBPS will publish your email, office phone, office address, degree, liscence, specialities, and if you are accepting new patients. All memberships are for one year and last from September 1 or date of purchase until September 1 of the following calander year.</p>
+</div>
+
 <%= form_for(@member, html: { class: "form-horizontal", role: "form" }) do |f| %>
   <% if @member.errors.any? %>
     <div class="alert alert-danger alert-dismissable" role="alert">
@@ -34,8 +38,15 @@
     </div>
   </div>
 
+  <div class="form-group">
+    <%= f.label :liscense, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :liscense, :placeholder => "i.e. LCSW, LMHC, MD, etc...", class: "form-control" %>
+    </div>
+  </div>
+
   <div>
-    <h2>Home Address(will not be published in our member directory)</h2>
+    <h4>Home Address(will not be published in our member directory)</h4>
   </div>
 
   <div class="form-group">
@@ -67,7 +78,7 @@
   </div>
 
   <div>
-    <h2>Office Address</h2>  
+    <h4>Office Address(required)</h4>  
   </div>
 
   <div class="form-group">
@@ -97,18 +108,18 @@
       <%= f.text_field :office_address_zip, :maxlength => 5, :size => 5, class: "form-control" %>
     </div>
   </div>
-
+<h5>An email and office phone are required. If you only use a cell phone please place that number in the office phone field. If you elect to be published in our online directory your office phone number will be published.</h5>
   <div class="form-group">
     <%= f.label :email, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.email_field :email, class: "form-control" %>
+      <%= f.email_field :email, :placeholder => "required", class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :office_phone, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.telephone_field :office_phone, class: "form-control" %>
+      <%= f.telephone_field :office_phone, :placeholder => "required", class: "form-control" %>
     </div>
   </div>
 
@@ -163,27 +174,32 @@
     </div>
   </div>
 
+  <div class= "align_right">
+    <div class="col-md-12 membership_description">
+      <h5><b>Clinical or Academic Membership</b> includes up to 21 CE credits per year.<br>
+          <b>Corresponding Membership</b> is for active members of the American Psychoanalytic Association <em>or</em> the International Psychoanalytic Association who are not permanent residents of this area. This membership does not include CE credits.<br>
+          <b>Life Membership</b> is for members who have attained the age of 70 or who have retired from active practice. Up to 21 CE credits per year included<br>
+          <b>Student Membership</b> is for those who ar <em>unliscensed</em> and are enrolled in training in a mental health or related field.</h5>
+    </div>
+  </div><br>
+
   <div class="form-group">
     <%= f.label :membership_type, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.label        :membership_type, "Clinical", :value => "clinical" %>
+      <%= f.label        :membership_type, "Clinical or Academic- $300.00", :value => "clinical" %>
       <%= f.radio_button :membership_type, "Clinical" %>
-      <%= f.label        :membership_type, "Academic", :value => "acadaemic" %>
-      <%= f.radio_button :membership_type, "Academic" %>
-      <%= f.label        :membership_type, "Corresponding", :value => "corresponding" %>
+      <%= f.label        :membership_type, "Corresponding - $60.00", :value => "corresponding" %>
       <%= f.radio_button :membership_type, "Corresponding" %>
-      <%= f.label        :membership_type, "Student", :value => "student" %>
+      <%= f.label        :membership_type, "Student - $30.00", :value => "student" %>
       <%= f.radio_button :membership_type, "Student" %>
-      <%= f.label        :membership_type, "Life", :value => "life" %>
+      <%= f.label        :membership_type, "Life - $100.00", :value => "life" %>
       <%= f.radio_button :membership_type, "Life" %>
-      <%= f.label        :membership_type, "Friend", :value => "friend" %>
-      <%= f.radio_button :membership_type, "Friend" %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit class: "btn btn-primary" %>
+      <%= f.submit class: "btn btn-primary btn-block" %>
     </div>
   </div>
 <% end %>

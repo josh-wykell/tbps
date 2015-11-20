@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119155159) do
+ActiveRecord::Schema.define(version: 20151119183137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(version: 20151119155159) do
     t.string   "member_last_name"
     t.string   "member_first_name"
     t.string   "degree"
-    t.string   "liscense_number"
     t.string   "home_address_street"
     t.string   "home_address_city"
     t.string   "home_address_state"
@@ -108,6 +107,7 @@ ActiveRecord::Schema.define(version: 20151119155159) do
     t.string   "membership_type"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+    t.string   "liscense"
   end
 
   create_table "memberships", force: :cascade do |t|

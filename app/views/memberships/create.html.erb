@@ -1,6 +1,2 @@
-<p id="notice"><%= notice %></p>
 
-
-<h1>Thank You</h1>
-
-<%= link_to 'home', root_path %>
+<h3>Your card was charged <%= number_to_currency(@membership.membership_price) %>. You are now a <%= @membership.member.membership_type %> member of TBPS.</h3>

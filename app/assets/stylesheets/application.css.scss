@@ -249,3 +249,39 @@ background: linear-gradient(rgba(248, 248, 247, 1), rgba(248, 248, 247, 1),
 .speaker_events {
   clear: right;
 }
+
+//membership_form
+
+.membership_description {
+  background-color: white;
+  margin: 0 0 10px 0
+}
+
+.membership_explained {
+  color: #f0f0ef;
+  font-size: 13pt;
+}
+
+.member_form_header {
+  margin: 0 0 10px 0;
+  text-align: center;
+  p {
+    text-align: left;
+  }
+}
+
+//new_membership (Stripe Payment)
+
+.stripe_centered {
+  float: none;
+  text-align: center !important;
+}
+
+.stripe_container {
+  margin: 40px 0 0 0;
+}
+
+.stripe_for_membership {
+  text-align: center;
+}
+
