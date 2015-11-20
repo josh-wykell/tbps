@@ -34,21 +34,21 @@
             <div class="nav_center">
               <div class="nav_center_text">
                 <ul class= "nav nav-pills">
-                  <li class="nav navbar-nav"><%= link_to 'Member Directory', members_path %></li>
-                  <li class="nav navbar-nav"><%= link_to 'Film Series', films_path %></li>
+                  <li class="nav navbar-nav big_li"><%= link_to 'Member Directory', members_path %></li>
+                  <li class="nav navbar-nav big_li"><%= link_to 'Film Series', films_path %></li>
                   <% if current_cart.cart_membership_status %>
-                    <li class="navbar"><%= link_to 'Speaker Events', speaking_events_path %></li>
+                    <li class="navbar big_li"><%= link_to 'Speaker Events', speakers_path %></li>
                   <% else %>
-                    <li class="navbar"><%= link_to 'Speaker Events', new_cart_cart_membership_status_path(current_cart) %></h4></li>
+                    <li class="navbar big_li"><%= link_to 'Speaker Events', new_cart_cart_membership_status_path(current_cart) %></h4></li>
                   <% end %>
                 </ul>
               </div>
             </div>
 
             <ul class="nav navbar-nav navbar-right">
-              <li class="nav"><%= link_to 'About Us', page_path('about') %></li><br>
-              <li class="nav"><%= link_to 'Reading Groups', page_path('reading_groups') %></li><br>
-              <li class="nav"><%= link_to 'Other TBPS Events', other_events_path %></li>
+              <li class="nav md_li"><%= link_to 'About Us', page_path('about') %></li><br>
+              <li class="nav md_li"><%= link_to 'Reading Groups', page_path('reading_groups') %></li><br>
+              <li class="nav md_li"><%= link_to 'Other TBPS Events', other_events_path %></li>
             </ul><br>
 
             <div class="join_tbps col-md-7">

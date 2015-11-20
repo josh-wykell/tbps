@@ -13,23 +13,36 @@
     </h3>
     <h5>TBPS presents thought leaders and clinicians in the field of psychotharpy on one Saturday each month</h5>
     <% @next_speaker.each do |speaker| %>
-      <h4>Our next speaker <%= link_to "#{speaker.name}", speaking_events_path %> will be speaking on <%= speaker.date.strftime("%A, %B %e, %Y") %> about  <%= speaker.theme %>.</h4>
+      <h4>Our next speaker 
+      <% if current_cart.cart_membership_status %>
+        <%= link_to "#{speaker.name}", speakers_path %>
+      <% else %> 
+        <%= link_to "#{speaker.name}", new_cart_cart_membership_status_path %>
+      <% end %>
+      will be speaking on <%= speaker.date.strftime("%A, %B %e, %Y") %> about  <%= speaker.theme %>.</h4>
     <% end %>
-    <h4>Coming Soon</h4>
+    <h4>Coming Soon:</h4>
     <% @current_speakers.each do |speaker| %>
       <h4 class="current_speaker_layout"><%= link_to "#{speaker.name}", speakers_path %></h4> - <h5 class="current_speaker_dates"><%= speaker.date.strftime("%B %e, %Y") %></h5><br>
-     <% end %>
+    <% end %>
+    <h5>
+      <% if current_cart.cart_membership_status %> 
+        <%= link_to "For a complete list of speakers and to register for talks click here.", speakers_path %>
+      <% else %>
+        <%= link_to "For a complete list of speakers and to register for talks click here.", new_cart_cart_membership_status_path %>
+      <% end %>
+    </h5>
   </div>
 
   <div class="landing_page_layout col-md-4 center-block lp2">
     <h3><%= link_to 'TBPS Film Seris', films_path %></h3>
     <% @current_films.each do |film| %>
       <h5> The TBPS presents a monthly Sunday afternoon film series. Each film is an informal and convivial viewing followed by a discussion facilitated by an academic in film and/or humanities, and a psychoanalytic psychotharapy clinician. All films are shown at the Auditorium located at 13919 Carrollwood Village Run, Tampa 33618.</h5>
-      <h3> A $2 Donation is requested at the door.</h3>
+      <h4> A $2 Donation is requested at the door.</h4>
       <table>
         <thead>
           <tr>
-            <h4>Our Next Film</h4>
+            <h4>Our Next Film:</h4>
           </tr>
           <tr>
             <th>Title</th>
@@ -40,7 +53,7 @@
         </thead>
         <tbody>
           <tr>
-            <td><%= link_to "#{film.title}", films_path(film) %></td>
+            <td><%= link_to "#{film.title}", films_path %></td>
             <td><%= film.date.strftime("%m/%d/%y") %></td>
             <td><%= film.time.strftime("%I:%M %P") %></td>
             <td><%= film.first_speaker %> & <%= film.second_speaker %></td>
@@ -55,6 +68,9 @@
 
   <div class="landing_page_layout col-md-4 center-block lp3">
     <h3><%= link_to 'Member Directory', members_path %></h3>
+    <h5>TBPS provides high quality continuing education seminars and study groups in psychoanalytic theory and clinical application.  It offers a supportive, inclusive, collegial community for mental health professionals in the Tampa Bay area. </h5>
+
+    <h4><%= link_to "Join TBPS Now", members_path %></h4>
   </div>  
 </div>
 

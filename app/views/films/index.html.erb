@@ -10,8 +10,8 @@
       <div class="col-lg-6">
         <div class="well">
           <h3><%= film.title %><h3>
-          <h4><%= film.date %></h4>
-          <h4><%= film.time %></h4>
+          <h4><%= film.date.strftime("%B %e, %Y") %></h4>
+          <h4><%= film.time.strftime("%I:%M %P") %></h4>
           <h5>A post film discusion will be led by <%= film.first_speaker %>, and <%= film.second_speaker %>.</h5>
           <p><%= film.synopsis %></p>
         </div>
