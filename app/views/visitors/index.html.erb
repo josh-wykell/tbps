@@ -17,7 +17,7 @@
       <% if current_cart.cart_membership_status %>
         <%= link_to "#{speaker.name}", speakers_path %>
       <% else %> 
-        <%= link_to "#{speaker.name}", new_cart_cart_membership_status_path %>
+        <%= link_to "#{speaker.name}", new_cart_cart_membership_status_path(current_cart) %>
       <% end %>
       will be speaking on <%= speaker.date.strftime("%A, %B %e, %Y") %> about  <%= speaker.theme %>.</h4>
     <% end %>
@@ -29,7 +29,7 @@
       <% if current_cart.cart_membership_status %> 
         <%= link_to "For a complete list of speakers and to register for talks click here.", speakers_path %>
       <% else %>
-        <%= link_to "For a complete list of speakers and to register for talks click here.", new_cart_cart_membership_status_path %>
+        <%= link_to "For a complete list of speakers and to register for talks click here.", new_cart_cart_membership_status_path(current_cart) %>
       <% end %>
     </h5>
   </div>
