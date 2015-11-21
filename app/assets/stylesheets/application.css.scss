@@ -131,9 +131,12 @@ h1 {
   border: none;
 }
 
-#bs-example-navbar-collapse-1 { 
-  background-color: #00B2FF; 
-}
+#bs-example-navbar-collapse-1 .open { 
+//   li {
+//     background-color: #00B2FF;  
+//   }
+  
+// }
 
 .tbps_brand{
   clear: none;
