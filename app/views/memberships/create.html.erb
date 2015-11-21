@@ -1,2 +1,2 @@
 
-<h3>Your card was charged <%= number_to_currency(@membership.membership_price) %>. You are now a <%= @membership.member.membership_type %> member of TBPS.</h3>
+<h3>Your card was charged <%= number_to_currency(@membership.membership_price / 100) %>. You are now a <%= @membership.member.membership_type %> member of TBPS.</h3>

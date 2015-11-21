@@ -43,7 +43,11 @@
             <td><%= number_to_currency(speaking_event.regular_price) %></td>
           <% end %>
           <td><%= speaking_event.speaker.name %></td>
-          <td><%= link_to "Add to Cart", cart_sale_items_path(current_cart, :speaking_event_id => speaking_event), :method => :post %></td>
+          <% if speaking_event.date > Date.today %>
+            <td><%= link_to "Add to Cart", cart_sale_items_path(current_cart, :speaking_event_id => speaking_event), :method => :post %></td>
+          <% else %>
+            <td>Add to Cart</td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

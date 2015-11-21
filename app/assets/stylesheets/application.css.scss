@@ -15,6 +15,12 @@
 
 @import "framework_and_overrides";
 
+@media (max-width: 480px) {
+  .container {
+    margin-top: 50px;
+  }
+}
+
 html {
   min-height: 100%;
   position: relative;
@@ -123,6 +129,10 @@ h1 {
 .navbar-default{
   background: transparent;
   border: none;
+}
+
+#bs-example-navbar-collapse-1 { 
+  background-color: #00B2FF; 
 }
 
 .tbps_brand{
