@@ -1,0 +1,324 @@
+
+@media (max-width: 480px) {
+  .container {
+    margin-top: 50px;
+  }
+  #bs-example-navbar-collapse-1 { 
+    background-color: #00B2FF; 
+ }
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  background: linear-gradient(#00B2FF, #00CDFF);
+  // font-family: 'Lato', sans-serif;
+  font-family: 'Quattrocento Sans', sans-serif;
+   h5 {
+    // font-family: 'Alegreya', serif;
+    font-family: 'Quattrocento', serif;
+  }
+  p {
+    // font-family: 'Alegreya', serif;
+    font-family: 'Quattrocento', serif;
+  }
+  a {
+    color: #f0f0ef;
+  }
+  
+}
+
+.col-centered { 
+  float: none;
+  margin: 0 auto;
+}
+
+.main_theme_layout {
+  // background: linear-gradient(135deg, rgba(248, 248, 247, 0.5), rgba(248, 248, 247, 1), 
+  //   rgba(248, 248, 247, 1), rgba(248, 248, 247, 1.0), rgba(0, 205, 255, 0.5), rgba(0, 205, 255, 0.5));
+  background: transparent;
+  border: 1px solid #f0f0ef;  
+  border-radius: 12px;
+  color: #23231f;  
+  overflow: auto;
+  padding: 20px;
+  h3 {
+    text-align: center;
+  }
+  th {
+    text-align: center
+  }
+  thead {
+    border-bottom: 1px solid #f0f0ef;
+  }
+  td {
+    min-width: 80px;
+    padding: 2px;
+    text-align: center;
+  }
+  
+  tr {
+    border-bottom: 1px solid #f0f0ef;
+  }
+}
+
+//Navbar 
+
+.big_li{
+  font-size: 15pt;
+}
+
+#bs-example-navbar-collapse-1 .open { 
+  li {
+    background-color: #00B2FF;  
+  } 
+ }
+
+.join_tbps{
+  display: inline-block;
+  float: right;
+  padding: none;
+  width: 650px;
+  a {
+    color: #dc18a8 !important;
+    text-align: right;
+    font-weight: bold;
+  }
+  h3 {
+    // font-family: 'Alegreya', serif;
+    font-family: 'Quattrocento', serif;
+    margin: 40px 0 0 0;
+  }
+}
+
+.list_item {
+  margin: 3px 0 0 0;
+  text-align: left;
+}
+
+.list-group {
+  float: right;
+}
+
+.md_li{
+  font-size: 13pt;
+}
+
+.nav {
+  a {
+    color: #f0f0ef !important;
+  }
+}
+
+.nav_center {
+  display: inline-block;
+  margin: 10px 0 0 0;
+  text-align: center;
+  width: 500px;
+}
+
+.nav_center_text {
+  display: inline-block;
+  float: none;
+  text-align: left;
+  width: 500px;
+  ul {
+    width: 500px;
+  }
+ }
+
+.navbar {
+  a {
+    color: #f0f0ef;
+  }
+  h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 64pt;
+  }
+}
+
+.navbar > .container-fluid {
+  text-align: center;
+  vertical-align: top; 
+}
+
+.navbar-collapse {
+  text-align: center;
+}
+
+.navbar-default{
+  background: transparent;
+  border: none;
+}
+
+.tbps_brand{
+  clear: none;
+  display: inline-block;
+  float: left;
+  padding: 0 15px 15px 15px;
+  h5 {
+    color: #f0f0ef;
+  }
+}
+
+//Home Page
+
+.container {
+  margin: none;
+}
+
+.current_speaker_dates {
+  display: inline-block;
+  max-width: 170px
+}
+
+.current_speaker_layout {
+  display: inline-block;
+  max-width: 100px;
+}
+
+.home_main {
+  margin: 70px 0 0 0;
+}
+
+.lp1 {
+  margin: 0 8px 2px -8px;
+  max-height: 400px;
+  min-height: 400px;
+}
+
+.lp2 {
+  margin: 0 0 2px 0;
+  max-height: 400px;
+  min-height: 400px;
+}
+
+.lp3 {
+  margin: 0 -8px 2px 8px;
+  max-height: 400px;
+  min-height: 400px;
+}
+
+//films_index
+
+.film1_index_layout {
+  height: 425px;
+  margin: 0 10px 10px 30px;
+  text-align: center;
+}
+
+.film2_index_layout {
+  float: right;
+  height: 425px;
+  margin: 0 30px 10px 10px;
+  text-align: center;
+}
+
+//members_index
+
+.member_index_layout {
+  height: 400px;
+}
+
+//membership_form
+
+.membership_description {
+  background-color: white;
+  margin: 0 0 10px 0
+}
+
+.membership_explained {
+  color: #f0f0ef;
+  font-size: 13pt;
+}
+
+.member_form_header {
+  margin: 0 0 10px 0;
+  text-align: center;
+  p {
+    text-align: left;
+  }
+}
+
+//membership_status_redirect
+
+.membership_status_form {
+  text-align: center;
+}
+
+//new_membership (Stripe Payment)
+
+.stripe_centered {
+  float: none;
+  text-align: center !important;
+}
+
+.stripe_container {
+  margin: 40px 0 0 0;
+}
+
+.stripe_for_membership {
+  text-align: center;
+}
+
+//speaking_events_index
+
+.checkout {
+  text-align: right;
+}
+
+.speaking_events_layout {
+background: linear-gradient(rgba(248, 248, 247, 1), rgba(248, 248, 247, 1), 
+  rgba(248, 248, 247, 1), rgba(248, 248, 247, 1.0),rgba(248, 248, 247, 1.0), rgba(248, 248, 247, 1.0), rgba(248, 248, 247, 1.0), rgba(248, 248, 247, 1.0),  rgba(0, 205, 255, 0.5), rgba(0, 205, 255, 1));  
+  border-radius: 12px;
+  max-height: 400px;
+  min-height: 400px;
+  overflow: auto;
+  padding: 20px;
+  h3 {
+    text-align: center;
+  }
+  tbody tr {
+    max-height: 100px;
+    border-bottom: 1px solid black;
+  }
+  th {
+    text-align: center
+  }
+  thead {
+    border-bottom: 1px solid black;
+  }
+  td {
+    min-width: 80px;
+    max-height: 100px;
+    padding: 2px;
+    text-align: center;
+  }
+  td:last-child {
+    border-right: none;
+  }
+}
+
+ .total {
+  min-width: 200px !important;
+}
+
+//speakers
+
+.bio {
+  height: 500px;
+  margin: 0 10px 0 -10px;
+}
+
+.speaker_events {
+  height: 500px;
+  clear: right;
+}
+
+.speaker_index_layout {
+  height: 280px;
+  margin: 0 0 10px 0;
+}

@@ -4,19 +4,21 @@
   <h2 class="pull-right">2015-2016 Theme: Aging</h2>
 </div>
 
-<% @films.in_groups_of(2) do |films| %>
-  <div class="row">
-    <% @films.each do |film| %>
-      <div class="col-lg-6">
-        <div class="well">
-          <h3><%= film.title %><h3>
-          <h4><%= film.date.strftime("%B %e, %Y") %></h4>
-          <h4><%= film.time.strftime("%I:%M %P") %></h4>
-          <h5>A post film discusion will be led by <%= film.first_speaker %>, and <%= film.second_speaker %>.</h5>
-          <p><%= film.synopsis %></p>
-        </div>
+    <% @films.in_groups_of(2) do |film1, film2| %>
+      <div class="col-lg-5 main_theme_layout film1_index_layout">
+        <h3><%= film1.title %><h3>
+        <h4><%= film1.date.strftime("%B %e, %Y") %></h4>
+        <h4><%= film1.time.strftime("%I:%M %P") %></h4>
+        <h5>A post film discusion will be led by <%= film1.first_speaker %>, and <%= film1.second_speaker %>.</h5>
+        <p><%= film1.synopsis %></p>
       </div>
-    <% end %>
-  </div>
+
+      <div class="col-lg-5 main_theme_layout film2_index_layout">
+        <h3><%= film2.title %><h3>
+        <h4><%= film2.date.strftime("%B %e, %Y") %></h4>
+        <h4><%= film2.time.strftime("%I:%M %P") %></h4>
+        <h5>A post film discusion will be led by <%= film2.first_speaker %>, and <%= film2.second_speaker %>.</h5>
+        <p><%= film2.synopsis %></p>
+      </div>
 <% end %>
   

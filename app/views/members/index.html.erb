@@ -1,25 +1,23 @@
 
 <h1>Member Directory</h1>
-<% @members.in_groups_of(4) do |members| %>
+<% @members.in_groups_of(4, false) do |members| %>
   <div class="row">
-    <% @members.each do |member| %>
-      <div class="col-lg-3">
-        <div class="well">
-          <h3><%= member.member_first_name %> <%= member.member_last_name %></h3>
-          <h5><%= member.degree %>, <%= member.liscense %></h5>
-          <h4>Practice Specialities:</h4>
-          <p><%= member.practice_specialities %></p>
-          <h4>Contact</h4>
-          <p><%= member.office_phone %></p>
-          <p><%= member.email %></p>
-          <p><%= member.office_address_street %></p>
-          <p><%= member.office_address_city %>, <%= member.office_address_zip %></p>
-          <% if member.new_patients %>
-            <h6>Is Currently Accepting New Patients</h6>
-          <% else %>
-            <h6><em>Not</em> Accepting New Patients</h6>
-          <% end %>
-        </div>
+    <% members.each do |member| %>
+      <div class="col-lg-3 main_theme_layout member_index_layout">
+        <h3><%= member.member_first_name %> <%= member.member_last_name %></h3>
+        <h5><%= member.degree %>, <%= member.liscense %></h5>
+        <h4>Practice Specialities:</h4>
+        <p><%= member.practice_specialities %></p>
+        <h4>Contact</h4>
+        <p><%= member.office_phone %></p>
+        <p><%= member.email %></p>
+        <p><%= member.office_address_street %></p>
+        <p><%= member.office_address_city %>, <%= member.office_address_zip %></p>
+        <% if member.new_patients %>
+          <h6>Is Currently Accepting New Patients</h6>
+        <% else %>
+          <h6><em>Not</em> Accepting New Patients</h6>
+        <% end %>
       </div>
     <% end %>
   </div>

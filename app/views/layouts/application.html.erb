@@ -6,8 +6,9 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Tbps" %>">
     <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Corben' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quattrocento+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -53,7 +54,7 @@
             </ul><br>
 
             <div class="join_tbps col-md-7">
-              <h3><em><%= link_to 'Join the TBPS now to receive benefits and discounts', new_member_path %></em></h3>
+              <h3><%= link_to 'Join the TBPS now to receive benefits and discounts', new_member_path %></h3>
             </div>
           </div>
       </div>

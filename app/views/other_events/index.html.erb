@@ -1,35 +1,33 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Listing Other Events</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Time</th>
-      <th>Street address</th>
-      <th>City</th>
-      <th>Zipcode</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @other_events.each do |other_event| %>
+<div class=" col-md-12 main_theme_layout">
+  <table class="table table-responsive">
+    <thead>
       <tr>
-        <td><%= link_to "#{other_event.title}", other_event_path(other_event) %></td>
-        <td><%= other_event.date %></td>
-        <td><%= other_event.time %></td>
-        <td><%= other_event.street_address %></td>
-        <td><%= other_event.city %></td>
-        <td><%= other_event.zipcode %></td>
-        <td><%= other_event.description %></td>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Street address</th>
+        <th>City</th>
+        <th>Zipcode</th>
+        <th>Description</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @other_events.each do |other_event| %>
+        <tr>
+          <td><%= link_to "#{other_event.title}", other_event_path(other_event) %></td>
+          <td><%= other_event.date.strftime("%A, %B %e, %Y") %></td>
+          <td><%= other_event.time.strftime("%I:%M %P")  %></td>
+          <td><%= other_event.street_address %></td>
+          <td><%= other_event.city %></td>
+          <td><%= other_event.zipcode %></td>
+          <td><%= other_event.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
 

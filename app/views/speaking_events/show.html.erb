@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<div class="speaking_events_layout">
+<div class="main_theme_layout">
   <p>
     <strong>Speaker:</strong>
-    <%= @speaking_event.speaker.name %>
+    <%= link_to "#{@speaking_event.speaker.name}", speaker_path(@speaking_event.speaker) %>
   </p>
 
   <p>
@@ -45,4 +45,6 @@
     <strong>Member Price:</strong>
     <%= number_to_currency(@speaking_event.member_price) %>
   </p>
+
+  <%= link_to "Back", speaker_path(@speaking_event.speaker) %>
 </div>

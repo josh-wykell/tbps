@@ -1,20 +1,13 @@
-<p id="notice"><%= notice %></p>
 
 <h1>2015-2016 Speakers</h1>
-<% @speakers.in_groups_of(4) do |speakers| %>
-  <div class="row">
-    <% @speakers.each do |speaker| %>
-      <div class="col-lg-3">
-        <div class="well">
-          <h2><%= link_to "#{speaker.name}", speaker_path(speaker) %></h2>
-          <h4>Theme: <%= speaker.theme %></h4>
-          <h4><%= speaker.date.strftime("%B %e, %Y") %></h4>
-          <h4>Bio:</h4>
-          <p><%= truncate speaker.biography, length: 75, separator: ' ' %> <%= link_to "For a full biography, event times, and prices click here.", speaker_path(speaker) %></p>
-        </div>
-      </div>
-    <% end %>
+<% @speakers.each do |speaker| %>
+  <div class="col-lg-3 main_theme_layout speaker_index_layout">
+    <h2><%= link_to "#{speaker.name}", speaker_path(speaker) %></h2>
+    <h4>Theme: <%= speaker.theme %></h4>
+    <h4><%= speaker.date.strftime("%B %e, %Y") %></h4>
+    <h4>Bio:</h4>
+    <p><%= truncate speaker.biography, length: 75, separator: ' ' %> <%= link_to "For a full biography, event times, and prices click here.", speaker_path(speaker) %></p>
   </div>
 <% end %>
-<br>
+
 
