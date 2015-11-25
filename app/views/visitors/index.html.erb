@@ -11,9 +11,9 @@
       <%= link_to 'Scientific Speaker Programs 2015-2016', new_cart_cart_membership_status_path(current_cart) %>
     <% end %>
     </h3>
-    <h5>TBPS presents thought leaders and clinicians in the field of psychotharpy on one Saturday each month</h5>
+    <h5>TBPS presents thought leaders and clinicians in the field of psychotherapy on one Saturday each month</h5>
     <% @next_speaker.each do |speaker| %>
-      <h4>Our next speaker 
+      <h4 id="our_next_speaker">Our next speaker 
       <% if current_cart.cart_membership_status %>
         <%= link_to "#{speaker.name}", speakers_path %>
       <% else %> 
@@ -37,8 +37,8 @@
   <div class="main_theme_layout col-md-4 center-block lp2">
     <h3><%= link_to 'TBPS Film Seris', films_path %></h3>
     <% @current_films.each do |film| %>
-      <h5> The TBPS presents a monthly Sunday afternoon film series. Each film is an informal and convivial viewing followed by a discussion facilitated by an academic in film and/or humanities, and a psychoanalytic psychotharapy clinician. All films are shown at the Auditorium located at 13919 Carrollwood Village Run, Tampa 33618.</h5>
-      <h4> A $2 Donation is requested at the door.</h4>
+      <h5>TBPS presents an informal and convivial monthly Sunday afternoon film series. The theme for 2015-2016 is On Aging. Screenings are followed by a discussion facilitated by a psychoanalytic clinician, and a scholar in film and/or humanities. All films are shown at the TBPS Auditorium located at 13919 Carrollwood Village Run, Tampa 33618.</h5>
+      <h5><b>$2 donation requested. Includes soda and popcorn.</b></h5>
       <table>
         <thead>
           <tr>
@@ -48,7 +48,7 @@
             <th>Title</th>
             <th>Date</th>
             <th>Time</th>
-            <th>Discusion Facilitated By</th>
+            <th>Discussion Facilitated By</th>
           </tr>
         </thead>
         <tbody>

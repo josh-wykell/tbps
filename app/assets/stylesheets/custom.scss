@@ -202,6 +202,10 @@ body {
   min-height: 400px;
 }
 
+#our_next_speaker {
+  font-size: 12pt;
+}
+
 //films_index
 
 .film1_index_layout {
@@ -220,7 +224,21 @@ body {
 //members_index
 
 .member_index_layout {
-  height: 400px;
+  height: 200px;
+  padding: 0 5px 0px 5px;
+  text-align: center;
+  h4 {
+    margin: 10px 0 0 0;
+  }
+  h5 {
+    margin: 2px 0 2px 0;
+  }
+  h6{
+    margin: 5px 0 5px 0;
+  }
+  p {
+    margin: 0 0 0 0;
+  }
 }
 
 //membership_form
