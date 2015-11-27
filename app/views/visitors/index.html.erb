@@ -35,32 +35,14 @@
   </div>
 
   <div class="main_theme_layout col-md-4 center-block lp2">
-    <h3><%= link_to 'TBPS Film Seris', films_path %></h3>
+    <h3><%= link_to 'TBPS Film Series', films_path %></h3>
     <% @current_films.each do |film| %>
-      <h5>TBPS presents an informal and convivial monthly Sunday afternoon film series. The theme for 2015-2016 is On Aging. Screenings are followed by a discussion facilitated by a psychoanalytic clinician, and a scholar in film and/or humanities. All films are shown at the TBPS Auditorium located at 13919 Carrollwood Village Run, Tampa 33618.</h5>
+      <h5>TBPS presents an informal and convivial monthly Sunday afternoon film series. The theme for 2015-2016 is On Aging. Screenings are followed by a discussion facilitated by a psychoanalytic clinician, and a scholar in film and/or humanities. All films are shown at 2:00pm at the TBPS Auditorium located at 13919 Carrollwood Village Run, Tampa 33618.</h5>
       <h5><b>$2 donation requested. Includes soda and popcorn.</b></h5>
-      <table>
-        <thead>
-          <tr>
-            <h4>Our Next Film:</h4>
-          </tr>
-          <tr>
-            <th>Title</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Discussion Facilitated By</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><%= link_to "#{film.title}", films_path %></td>
-            <td><%= film.date.strftime("%m/%d/%y") %></td>
-            <td><%= film.time.strftime("%I:%M %P") %></td>
-            <td><%= film.first_speaker %> & <%= film.second_speaker %></td>
-          </tr>
-        </tbody>
-      </table>
-      <h4>Synopsis</h4>
+      <h4>Our Next Film:<%= link_to "#{film.title}", films_path %></h4>    
+      <h5><%= film.date.strftime("%m/%d/%y") %></h5>
+      <h5>Discussion facilitated by <%= film.first_speaker %> & <%= film.second_speaker %></h5>
+      <h4>Synopsis:</h4>
       <p><%= truncate film.synopsis, length: 100, separator: ' ' %><%= link_to 'Full synopsis', film_path(film) %><p>
       <h4><%= link_to 'Click here for a complete listing of our film series', films_path %></h4>
     <% end %>
