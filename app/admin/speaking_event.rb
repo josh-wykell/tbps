@@ -1,17 +1,20 @@
 ActiveAdmin.register SpeakingEvent do
-
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
   permit_params :date, :time, :street_address, :city, :zipcode, :description, :regular_price, :speaker_id, :member_price
 
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
-
-
+  index do 
+    column :speaker
+    column :date, :sortable => :date do |speaking_event|
+      speaking_event.date.strftime("%d/%m/%y")
+    end
+    column :time do |speaking_event|
+      speaking_event.time.strftime("%I:%M%P")
+    end
+    column :regular_price do |speaking_event|
+      number_to_currency(speaking_event.regular_price)
+    end
+    column :member_price do |speaking_event|
+      number_to_currency(speaking_event.member_price)
+    end
+    actions
+  end
 end
