@@ -39,24 +39,33 @@
                   <li class="nav navbar-nav big_li"><%= link_to 'Member Directory', members_path %></li>
                   <li class="nav navbar-nav big_li"><%= link_to 'Film Series', films_path %></li>
                   <% if current_cart.cart_membership_status %>
-                    <li class="navbar big_li"><%= link_to 'Guest Speakers', speakers_path %></li>
+                    <li class=" nav navbar big_li"><%= link_to 'Guest Speakers', speakers_path %></li>
                   <% else %>
-                    <li class="navbar big_li"><%= link_to 'Guest Speakers', new_cart_cart_membership_status_path(current_cart) %></h4></li>
+                    <li class="nav navbar big_li"><%= link_to 'Guest Speakers', new_cart_cart_membership_status_path(current_cart) %></h4></li>
                   <% end %>
                 </ul>
               </div>
             </div>
 
-            <ul class="nav navbar-nav navbar-right">
-              <li class="nav md_li"><%= link_to 'About Us', page_path('about') %></li><br>
-              <li class="nav md_li"><%= link_to 'Reading Groups', page_path('reading_groups') %></li><br>
-              <li class="nav md_li"><%= link_to 'Other TBPS Events', other_events_path %></li>
+            <ul class="nav-pills navbar-right">
+              <li class="nav navbar-nav md_li"><%= link_to 'About Us', page_path('about') %></li><br>
+              <li class="nav navbar-nav md_li"><%= link_to 'Reading Groups', page_path('reading_groups') %></li><br>
+              <li class="nav navbar-nav md_li"><%= link_to 'Other TBPS Events', other_events_path %></li><br>
+              <li class="nav navbar-nav md_li"><%= link_to 'Join TBPS Mailing List', new_mailing_list_path %></li>
             </ul><br>
 
             <div class="join_tbps col-md-7">
               <h3><%= link_to 'Join the TBPS now to receive benefits and discounts', new_member_path %></h3>
             </div>
           </div>
+
+          <% if current_cart.sale_items.count > 0 %>
+            <div class="cart_count pull-right">
+              <%= link_to current_cart_path do %>
+              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">=<%= current_cart.sale_items.count %></span>
+              <% end %>
+            </div>
+          <% end %>
       </div>
     </nav> 
 

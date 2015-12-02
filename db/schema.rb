@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119183137) do
+ActiveRecord::Schema.define(version: 20151202140408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,14 +83,22 @@ ActiveRecord::Schema.define(version: 20151119183137) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "mailing_lists", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "members", force: :cascade do |t|
     t.string   "member_last_name"
     t.string   "member_first_name"
     t.string   "degree"
-    t.string   "home_address_street"
-    t.string   "home_address_city"
-    t.string   "home_address_state"
-    t.integer  "home_address_zip"
+    t.string   "mailing_address_street"
+    t.string   "mailing_address_city"
+    t.string   "mailing_address_state"
+    t.integer  "mailing_address_zip"
     t.string   "office_address_street"
     t.string   "office_address_city"
     t.string   "office_address_state"
@@ -102,11 +110,11 @@ ActiveRecord::Schema.define(version: 20151119183137) do
     t.string   "home_phone"
     t.date     "birth_date"
     t.text     "practice_specialities"
-    t.boolean  "publish",               default: false, null: false
-    t.boolean  "new_patients",          default: false, null: false
+    t.boolean  "publish",                default: false, null: false
+    t.boolean  "new_patients",           default: false, null: false
     t.string   "membership_type"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "liscense"
   end
 

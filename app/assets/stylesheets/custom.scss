@@ -84,6 +84,16 @@ body {
   } 
  }
 
+ .cart_count {
+  color: #f0f0ef;
+  font-size: 28px;
+  margin: 0 20px 0 0;
+ }
+
+ .cart_count a:hover{
+  text-decoration: underline;
+}
+
 .join_tbps{
   display: inline-block;
   float: right;
@@ -111,16 +121,13 @@ body {
 
 .md_li{
   font-size: 13pt;
+  margin: 3px 0 4px 0;
 }
 
 .nav {
   a {
     color: #f0f0ef !important;
   }
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .nav_center {
@@ -137,6 +144,10 @@ a:hover {
   width: 500px;
   ul {
     width: 500px;
+    li a:hover{
+      background-color: transparent;
+      text-decoration: underline;
+    }
   }
  }
 
@@ -158,6 +169,9 @@ a:hover {
 
 .navbar-collapse {
   text-align: center;
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 .navbar-default{

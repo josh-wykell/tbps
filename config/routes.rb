@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :members do
     resources :memberships
   end
+  resources :mailing_lists
   get 'current_cart',   to: 'carts#show'
   get 'checkout',       to: 'carts#checkout'
   devise_for :admin_users, ActiveAdmin::Devise.config
