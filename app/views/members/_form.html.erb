@@ -10,7 +10,7 @@
 
 <div class="member_form_header">
   <h1>New Member Form</h1>
-  <p class="membership_explained">All members recieve discounted prices for TBPS talks. Clinical, Academic, and Life members also may receive up to 21 CE credit hours. If you elect to be published in the TBPS online member directory TBPS will publish your email, office phone, office address, degree, liscence, specialities, and if you are accepting new patients. All memberships are for one year and last from September 1 or date of purchase until September 1 of the following calander year.</p>
+  <p class="membership_explained">All members recieve discounted prices for TBPS talks. Clinical, Academic, and Life members also may receive up to 21 CE credit hours. If you elect to be published in the TBPS online member directory TBPS will publish your email, office phone, office address, degree, license, specialities, and if you are accepting new patients. All memberships are for one year and last from September 1 or date of purchase until September 1 of the following calander year.</p>
 </div>
 
 <%= form_for(@member, html: { class: "form-horizontal", role: "form" }) do |f| %>
@@ -49,14 +49,14 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :liscense, class: "col-sm-2 control-label" %>
+    <%= f.label :license, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
       <%= f.text_field :liscense, :placeholder => "i.e. LCSW, LMHC, MD, etc...", class: "form-control" %>
     </div>
   </div>
 
   <div>
-    <h4>Mailing Address(required - will not be published in our member directory)</h4>
+    <h4>Mailing Address (required - will not be published in our member directory)</h4>
   </div>
 
   <div class="form-group">
@@ -88,7 +88,7 @@
   </div>
 
   <div>
-    <h4>Office Address</h4>  
+    <h4>Office Address  (for publication)</h4>  
   </div>
 
   <div class="form-group">
@@ -189,7 +189,7 @@
       <h5><b>Clinical or Academic Membership</b> includes up to 21 CE credits per year.<br>
           <b>Corresponding Membership</b> is for active members of the American Psychoanalytic Association <em>or</em> the International Psychoanalytic Association who are not permanent residents of this area. This membership does not include CE credits.<br>
           <b>Life Membership</b> is for members who have attained the age of 70 or who have retired from active practice. Up to 21 CE credits per year included<br>
-          <b>Student Membership</b> is for those who ar <em>unliscensed</em> and are enrolled in training in a mental health or related field.</h5>
+          <b>Student Membership</b> is for those who are <em>unlicensed</em> and are enrolled in training in a mental health or related field.</h5>
     </div>
   </div><br>
 
