@@ -4,7 +4,7 @@
   <h2 class="pull-right">2015-2016 Theme: Aging</h2>
 </div>
 
-    <% @films.in_groups_of(2) do |film1, film2| %>
+    <% @films.in_groups_of(2).each do |film1, film2| %>
       <div class="col-lg-5 main_theme_layout film1_index_layout">
         <h3><%= film1.title %><h3>
         <h4><%= film1.date.strftime("%B %e, %Y") %></h4>
