@@ -12,7 +12,7 @@
         <h5>A post film discusion will be led by <%= film1.first_speaker %>, and <%= film1.second_speaker %>.</h5>
         <p><%= film1.synopsis %></p>
       </div>
-
+    <% if film2 %>
       <div class="col-lg-5 main_theme_layout film2_index_layout">
         <h3><%= film2.title %><h3>
         <h4><%= film2.date.strftime("%B %e, %Y") %></h4>
@@ -20,5 +20,6 @@
         <h5>A post film discusion will be led by <%= film2.first_speaker %>, and <%= film2.second_speaker %>.</h5>
         <p><%= film2.synopsis %></p>
       </div>
+    <% end %>
 <% end %>
   
