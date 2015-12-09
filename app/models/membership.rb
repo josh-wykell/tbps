@@ -11,7 +11,7 @@ class Membership < ActiveRecord::Base
     else member.membership_type == "life"
       membership_price = 10000
     end
-    membership_price
+    membership_price  
   end
 
   def dues_payment
@@ -19,7 +19,7 @@ class Membership < ActiveRecord::Base
                                        card: card_token
 
     Stripe::Charge.create customer: customer.id,
-                          amount: membership_price,
+                          amount: membership_price + member.membership.donation*100,
                           description: 'TBPS Membership',
                           currency: 'usd'
   end
