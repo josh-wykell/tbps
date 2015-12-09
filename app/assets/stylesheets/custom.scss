@@ -48,12 +48,15 @@ body {
   // border-style: inset;
   color: #23231f;  
   overflow: auto;
-  padding: 20px;
+  padding: 10px 15px 10px 15px;
   h3 {
     text-align: center;
     // text-shadow: 1px 2px 0 #c3c0c9;
     // #272334
     font-weight: bold;
+  }
+  h5 {
+    font-size: 12pt;
   }
   th {
     text-align: center
@@ -141,9 +144,9 @@ body {
   display: inline-block;
   float: none;
   text-align: left;
-  width: 500px;
+  width: 600px;
   ul {
-    width: 500px;
+    width: 600px;
     li a:hover{
       background-color: transparent;
       text-decoration: underline;
@@ -190,7 +193,12 @@ body {
   }
 }
 
-//Home Page
+//Visitors Index
+
+.coming_soon {
+  font-weight: bold;
+  margin: 10px 0 3px 0;
+}
 
 .container {
   margin: none;
@@ -198,11 +206,13 @@ body {
 
 .current_speaker_dates {
   display: inline-block;
-  max-width: 170px
+  margin: 2px 0 0 0;
+  max-width: 170px;
 }
 
 .current_speaker_layout {
   display: inline-block;
+  margin: 2px 0 0 0;
   max-width: 100px;
 }
 
@@ -226,24 +236,49 @@ body {
   margin: 0 -8px 2px 8px;
   max-height: 400px;
   min-height: 400px;
+  h4 {
+    text-align: center;
+  }
+}
+
+.next {
+  margin: 5px 0 0 0;
+  text-align: center;
 }
 
 #our_next_speaker {
   font-size: 12pt;
 }
 
-//films_index
+.speaker_description {
+  display: inline-block;
+}
+
+.speaker_full_title {
+  text-align: center;
+}
+
+.speaker_title {
+  display: inline-block;
+  margin: 2px 0 10px 0;
+}
+
+.synopsis {
+  margin: 10px 0 3px 0;
+}
+
+//Films Index
 
 .film1_index_layout {
-  height: 425px;
-  margin: 0 10px 10px 30px;
+  height: 250px;
+  margin: 0 5px 10px -5px;
   text-align: center;
 }
 
 .film2_index_layout {
   float: right;
-  height: 425px;
-  margin: 0 30px 10px 10px;
+  height: 250px;
+  margin: 0 -5px 10px 5px;
   text-align: center;
 }
 
@@ -308,7 +343,7 @@ body {
   text-align: center;
 }
 
-//speaking_events_index
+//Speakers Index
 
 .checkout {
   text-align: right;

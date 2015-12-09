@@ -39,9 +39,9 @@
                   <li class="nav navbar-nav big_li"><%= link_to 'Member Directory', members_path %></li>
                   <li class="nav navbar-nav big_li"><%= link_to 'Film Series', films_path %></li>
                   <% if current_cart.cart_membership_status %>
-                    <li class=" nav navbar big_li"><%= link_to 'Guest Speakers', speakers_path %></li>
+                    <li class=" nav navbar big_li"><%= link_to 'Speaker Program', speakers_path %></li>
                   <% else %>
-                    <li class="nav navbar big_li"><%= link_to 'Guest Speakers', new_cart_cart_membership_status_path(current_cart) %></h4></li>
+                    <li class="nav navbar big_li"><%= link_to 'Speaker Program', new_cart_cart_membership_status_path(current_cart) %></h4></li>
                   <% end %>
                 </ul>
               </div>
