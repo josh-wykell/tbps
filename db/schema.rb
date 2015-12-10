@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(version: 20151209175119) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "liscense"
+    t.decimal  "donation"
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -125,7 +126,6 @@ ActiveRecord::Schema.define(version: 20151209175119) do
     t.integer  "member_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.decimal  "donation"
   end
 
   add_index "memberships", ["member_id"], name: "index_memberships_on_member_id", using: :btree
