@@ -8,6 +8,8 @@ class Membership < ActiveRecord::Base
       membership_price = 6000
     elsif member.membership_type == "student"
       membership_price = 3000
+    elsif member.membership_type == "friend"
+      membership_price = 6000
     else member.membership_type == "life"
       membership_price = 10000
     end
