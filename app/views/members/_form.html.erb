@@ -1,10 +1,11 @@
 <div>
   <h1>TBPS Memberships</h1>
   <h4>
-    <b>Clinical or Academic Membership</b> includes up to 21 CE credits per year, and is $300.<br><br>
-          <b>Corresponding Membership</b> is for active members of the American Psychoanalytic Association <em>or</em> the International Psychoanalytic Association who are not permanent residents of this area. This membership does not include CE credits, and is $60.<br><br>
-          <b>Life Membership</b> is for members who have attained the age of 70 or who have retired from active practice. Up to 21 CE credits per year included. Life membership is $100.<br><br> 
-          <b>Student Membership</b> is for those who are <em>unlicensed</em>, and are enrolled in training in a mental health or related field. Student membership is $30.
+    <b>Clinical or Academic Membership</b> includes up to 21 free CE credits per year, and is $300.<br><br>
+    <b>Corresponding Membership</b> is for active members of the American Psychoanalytic Association <em>or</em> the International Psychoanalytic Association who are not permanent residents of this area. This membership does not include CE credits, and is $60.<br><br>
+    <b>Life Membership</b> is for members who have attained the age of 70 or who have retired from active practice. Up to 21 free CE credits per year included. Life membership is $100.<br><br> 
+    <b>Student Membership</b> is for those who are <em>unlicensed</em>, and are enrolled in training in a mental health or related field. Student membership is $30.<br><br>
+    <b>Friends</b> are members of the general public who demonstrate an interest in psychoanalysis, and an involvement in the mission of this society and who wish to support this mission. CE credits are not included in the Friends membership. Donations of $60 and above are accepted.
   </h4>
 </div>
 
@@ -29,28 +30,28 @@
 
   <div class="form-group">
     <%= f.label :first_name, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       <%= f.text_field :member_first_name, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :last_name, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       <%= f.text_field :member_last_name, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :degree, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-3">
       <%= f.text_field :degree, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :license, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-3">
       <%= f.text_field :liscense, :placeholder => "i.e. LCSW, LMHC, MD, etc...", class: "form-control" %>
     </div>
   </div>
@@ -61,14 +62,14 @@
 
   <div class="form-group">
     <%= f.label :street_address, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       <%= f.text_field :mailing_address_street, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :city, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       <%= f.text_field :mailing_address_city, class: "form-control" %>
     </div>
   </div>
@@ -82,7 +83,7 @@
 
   <div class="form-group">
     <%= f.label :zip_code, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-3">
       <%= f.text_field :mailing_address_zip, :maxlength => 5, :size => 5, class: "form-control" %>
     </div>
   </div>
@@ -93,14 +94,14 @@
 
   <div class="form-group">
     <%= f.label :street_address, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       <%= f.text_field :office_address_street, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :city, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       <%= f.text_field :office_address_city, class: "form-control" %>
     </div>
   </div>
@@ -114,49 +115,49 @@
 
   <div class="form-group">
     <%= f.label :zip_code, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-3">
       <%= f.text_field :office_address_zip, :maxlength => 5, :size => 5, class: "form-control" %>
     </div>
   </div>
 <h5>An email and office phone are required. If you only use a cell phone please place that number in the office phone field. If you elect to be published in our online directory your office phone number will be published.</h5>
   <div class="form-group">
     <%= f.label :email, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       <%= f.email_field :email, :placeholder => "required", class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :office_phone, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       <%= f.telephone_field :office_phone, :placeholder => "required", class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :cell_phone, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       <%= f.telephone_field :cell_phone, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :home_phone, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       (will not be published)<%= f.telephone_field :home_phone, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :fax, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       <%= f.telephone_field :fax, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :date_of_birth, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       <%= f.date_select :birth_date, :start_year=> 1915, :end_year=> 2015, class: "form-control" %>
     </div>
   </div>
@@ -186,10 +187,11 @@
 
   <div class= "align_right">
     <div class="col-md-12 membership_description">
-      <h5><b>Clinical or Academic Membership</b> includes up to 21 CE credits per year.<br>
+      <h5><b>Clinical or Academic Membership</b> includes up to 21 free CE credits per year.<br>
           <b>Corresponding Membership</b> is for active members of the American Psychoanalytic Association <em>or</em> the International Psychoanalytic Association who are not permanent residents of this area. This membership does not include CE credits.<br>
-          <b>Life Membership</b> is for members who have attained the age of 70 or who have retired from active practice. Up to 21 CE credits per year included<br>
-          <b>Student Membership</b> is for those who are <em>unlicensed</em> and are enrolled in training in a mental health or related field.</h5>
+          <b>Life Membership</b> is for members who have attained the age of 70 or who have retired from active practice. Up to 21 free CE credits per year included<br>
+          <b>Student Membership</b> is for those who are <em>unlicensed</em> and are enrolled in training in a mental health or related field.<br>
+          <b>Friends</b> are members of the general public who demonstrate an interest in psychoanalysis and an involvement in the mission of this Society and who wish to support this mission. CE credits are not included in Friends category membership donation. Donations of $60 and above are accepted.</h5>
     </div>
   </div><br>
 
@@ -204,6 +206,17 @@
       <%= f.radio_button :membership_type, "student" %>
       <%= f.label        :membership_type, "Life - $100.00", :value => "life" %>
       <%= f.radio_button :membership_type, "life" %>
+      <%= f.label        :membership_type, "Friend - $60.00", :value => "friend" %>
+      <%= f.radio_button :membership_type, "friend" %>
+    </div>
+  </div>
+
+<h3>Would you like to make a donation to the Tampa Bay Psychoanalytic Society?</h3>
+  <div class="form-group">
+    <%= f.label :Amount, class: "col-sm-2 control-label" %>
+    <div class="col-sm-4 input-group">
+      <span class="input-group-addon">$</span>
+      <%= f.text_field :donation, :placeholder => "example: 50.00", class: "form-control" %>
     </div>
   </div>
 
