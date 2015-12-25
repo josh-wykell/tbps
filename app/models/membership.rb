@@ -13,7 +13,11 @@ class Membership < ActiveRecord::Base
     else member.membership_type == "life"
       membership_price = 10000
     end
-    membership_price + ((member.donation*100).to_i) 
+    if member.donation
+      membership_price + ((member.donation*100).to_i) 
+    else
+      membership_price
+    end
   end
 
   def dues_payment
