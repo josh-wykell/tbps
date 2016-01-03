@@ -41,9 +41,5 @@
 <div class="col-md-3"></div>
 
 <div class="col-md-8 checkout">
-  <% unless @cart.total_price == 0 %>
     <a href="<%= checkout_path %>" class="btn btn-primary" role="button">Checkout</a>
-  <% else %>
-    <a href="<%= edit_cart_path(current_cart) %>" class="btn btn-primary" role="button">Checkout</a>
-  <% end %>
 </div>
