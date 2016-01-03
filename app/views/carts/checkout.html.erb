@@ -37,20 +37,14 @@
   </article>
 
   <div class="form-group">
-    <% unless @cart.total_price == 0 %>
-      <div class="col-sm-offset-2 col-sm-10">
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                data-description= "Speaking Events for <%= @cart.sale_items.map(&:title).to_sentence %>" 
-                data-amount= "<%= @cart.total_price*100 %>"
-                data-name = "Tampa Bay Psychoanalytic Society"
-                data-locale="auto"
-                data-billing-address="true"></script>
-      </div>
-    <% else %>
-      <div class="col-sm-offset-2 col-sm-10">
-        <%= f.submit "Register", class: "btn btn-primary btn-block" %>
-      </div>
-    <% end %>
+    <div class="col-sm-offset-2 col-sm-10">
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description= "Speaking Events for <%= @cart.sale_items.map(&:title).to_sentence %>" 
+              data-amount= "<%= @cart.total_price*100 %>"
+              data-name = "Tampa Bay Psychoanalytic Society"
+              data-locale="auto"
+              data-billing-address="true"></script>
+    </div>
   </div>        
 <% end %>

@@ -14,7 +14,7 @@ class CartsController < InheritedResources::Base
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    render :new
+    # render :new
   end
 
   def show
@@ -23,6 +23,15 @@ class CartsController < InheritedResources::Base
 
   def checkout
     @cart = current_cart
+  end
+
+  def edit
+    @cart = current_cart
+      # redirect_to root_path
+  end
+
+  def no_sale
+    @cart = Cart.find(params[:id])
   end
 
   private
