@@ -29,3 +29,5 @@ class Cart < ActiveRecord::Base
     end
   end
 end
+
+

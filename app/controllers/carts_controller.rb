@@ -5,7 +5,7 @@ class CartsController < InheritedResources::Base
     @cart = current_cart
 
     unless @cart.total_price == 0
-      @cart.update cart_params.merge(email: stripe_params["stripeEmail"], card_token: stripe_params["stripeToken"], 
+      @cart.update stripe_cart_params.merge(email: stripe_params["stripeEmail"], card_token: stripe_params["stripeToken"], 
                                      buyer_name: stripe_params["stripeBillingName"], street_address: stripe_params["stripeBillingAddressLine1"], 
                                      zipcode: stripe_params["stripeBillingAddressZip"], city: stripe_params["stripeBillingAddressCity"], 
                                      state: stripe_params["stripeBillingAddressState"], country: stripe_params["stripeBillingAddressCountry"])
@@ -14,14 +14,14 @@ class CartsController < InheritedResources::Base
       @cart.save
       flash[:notice] = 'Your order has been completed'
     else
-      @cart.update(cart_params)
+      @cart.update(cart_params) 
       @cart.save
       flash[:notice] = 'Your order has been completed'
     end
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      # render :new
+      render :back
   end
 
   def show
@@ -50,6 +50,11 @@ class CartsController < InheritedResources::Base
 
 
     def cart_params
+      params.require(:cart).permit :purchased_at, :email, :card_token, :buyer_name, :zipcode, :city, :state, :country, :street_address
+    end
+
+    def stripe_cart_params
       params.permit :purchased_at, :email, :card_token, :buyer_name, :zipcode, :city, :state, :country, :street_address
     end
+
 end
