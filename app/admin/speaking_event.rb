@@ -3,8 +3,9 @@ ActiveAdmin.register SpeakingEvent do
 
   index do 
     column :speaker
+    column :id 
     column :date, :sortable => :date do |speaking_event|
-      speaking_event.date.strftime("%d/%m/%y")
+      speaking_event.date.strftime("%m/%d/%y")
     end
     column :time do |speaking_event|
       speaking_event.time.strftime("%I:%M%P")

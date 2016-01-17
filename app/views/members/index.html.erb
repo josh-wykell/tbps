@@ -10,7 +10,9 @@
         <p><%= member.practice_specialities %></p>
         <p><%= member.office_phone %>, <%= member.email %></p>
         <p><%= member.office_address_street %></p>
-        <p><%= member.office_address_city %>, <%= member.office_address_zip %></p>
+        <% if member.office_address_city? %>
+          <p><%= member.office_address_city %>, <%= member.office_address_zip %></p>
+        <% end %>
         <% if member.new_patients %>
           <h6><b>Is Currently Accepting New Patients</b></h6>
         <% else %>
