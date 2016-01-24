@@ -31,9 +31,6 @@
         <tr>
           <td><%= speaking_event.date.strftime("%A, %B %e, %Y") %></td>
           <td><%= speaking_event.time.strftime("%I:%M %P") %></td>
-          <td><%= speaking_event.street_address %></td>
-          <td><%= speaking_event.city %></td>
-          <td><%= speaking_event.zipcode %></td>
           <td><%= link_to "#{truncate speaking_event.description, length: 100, separator: ' '}", speaking_event_path(speaking_event) %></td>
           <% @cart=current_cart %>
           <% if @cart.cart_membership_status.is_a_member %>
