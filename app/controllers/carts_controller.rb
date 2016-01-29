@@ -1,6 +1,5 @@
 class CartsController < InheritedResources::Base
 
-
   def update
     @cart = current_cart
 

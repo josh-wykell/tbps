@@ -21,8 +21,7 @@ class Membership < ActiveRecord::Base
   end
 
   def dues_payment
-    customer = Stripe::Customer.create email: email,
-                                       card: card_token
+    customer = Stripe::Customer.create email: email, card: card_token
 
     Stripe::Charge.create customer: customer.id,
                           amount: membership_charge,
