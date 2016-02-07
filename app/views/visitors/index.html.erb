@@ -25,15 +25,21 @@
     <% end %>
     <h4 class="coming_soon">Coming Soon:</h4>
     <% @current_speakers.each do |speaker| %>
-      <h4 class="current_speaker_layout"><%= link_to "#{speaker.name}", speakers_path %></h4> - <h5 class="current_speaker_dates"><%= speaker.date.strftime("%B %e, %Y") %></h5><br>
+      <h4 class="current_speaker_layout">
+        <% if current_cart.cart_membership_status %>
+          <%= link_to "#{speaker.name}", speakers_path %>
+        <% else %>
+          <%= link_to "#{speaker.name}", new_cart_cart_membership_status_path(current_cart) %>
+        <% end %>
+        </h4> - <h5 class="current_speaker_dates"><%= speaker.date.strftime("%B %e, %Y") %></h5><br>
+      <h5>
+        <% if current_cart.cart_membership_status %> 
+          <%= link_to "For a complete list of speakers and to register for talks click here.", speakers_path %>
+        <% else %>
+          <%= link_to "For a complete list of speakers and to register for talks click here.", new_cart_cart_membership_status_path(current_cart) %>
+        <% end %>
+      </h5>
     <% end %>
-    <h5>
-      <% if current_cart.cart_membership_status %> 
-        <%= link_to "For a complete list of speakers and to register for talks click here.", speakers_path %>
-      <% else %>
-        <%= link_to "For a complete list of speakers and to register for talks click here.", new_cart_cart_membership_status_path(current_cart) %>
-      <% end %>
-    </h5>
   </div>
 
   <div class="main_theme_layout col-md-4 center-block lp2">
