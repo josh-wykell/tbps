@@ -12,6 +12,7 @@ form do |f|
   f.input :member_first_name
   f.input :degree
   f.input :liscense
+  f.input :license_number
   f.input :mailing_address_street
   f.input :mailing_address_city
   f.input :mailing_address_state
