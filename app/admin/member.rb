@@ -6,7 +6,7 @@ ActiveAdmin.register Member do
  permit_params :member_last_name, :member_first_name, :degree, :mailing_address_street, 
                :mailing_address_city, :mailing_address_state, :mailing_address_zip, :office_address_street, :office_address_city, 
                :office_address_state, :office_address_zip, :email, :office_phone, :fax, :cell_phone, :home_phone, :birth_date,
-               :practice_specialities, :membership_type, :publish, :new_patients, :liscense
+               :practice_specialities, :membership_type, :publish, :new_patients, :liscense, :license_number
 form do |f|
   f.input :member_last_name
   f.input :member_first_name
