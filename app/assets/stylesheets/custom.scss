@@ -6,7 +6,7 @@
     margin-top: 50px;
   }
   #bs-example-navbar-collapse-1 { 
-    background-color: #74b2cd; 
+    background-color: #fff; 
  }
 }
 
@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  background: #74b2cd;
+  background: #fff;
   // font-family: 'Lato', sans-serif;
   font-family: 'Quattrocento Sans', sans-serif;
    h5 {
@@ -45,7 +45,7 @@ body {
   //   rgba(248, 248, 247, 1), rgba(248, 248, 247, 1.0), rgba(0, 205, 255, 0.5), rgba(0, 205, 255, 0.5));
   background: transparent;
   border: 1px solid #f0f0ef;  
-  border-radius: 12px;
+  // border-radius: 12px;
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
   // border-style: inset;
   color: #23231f;  
@@ -131,8 +131,12 @@ body {
 
 .nav {
   a {
-    color: #f0f0ef !important;
+    color: #000 !important;
   }
+}
+
+nav.navbar.navbar-default {
+    border-bottom: 1px solid;
 }
 
 .nav_center {
@@ -158,12 +162,12 @@ body {
 
 .navbar {
   a {
-    color: #f0f0ef;
+    color: #000;
   }
   h1 {
     font-family: 'Lato', sans-serif;
     font-size: 64pt;
-    text-shadow: 2px 4px 8px #003247;
+    text-shadow: 2px 4px 8px #cbd0d2;
   }
 }
 
@@ -190,8 +194,8 @@ body {
   float: left;
   padding: 0 15px 15px 15px;
   h5 {
-    color: #f0f0ef;
-    text-shadow: 2px 2px 8px #003247;
+    color: #000;
+    text-shadow: 2px 2px 8px #cbd0d2;
   }
 }
 
