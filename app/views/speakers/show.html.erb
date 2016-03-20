@@ -28,7 +28,7 @@
         <tr>
           <td><%= speaking_event.date.strftime("%A, %B %e, %Y") %></td>
           <td><%= speaking_event.time.strftime("%I:%M %P") %></td>
-          <td><%= link_to "#{truncate speaking_event.description, length: 100, separator: ' '}", speaking_event_path(speaking_event) %></td>
+          <td><%= link_to "#{truncate speaking_event.description, length: 100, separator: ' ', :escape => false}", speaking_event_path(speaking_event) %></td>
           <% @cart=current_cart %>
           <% if @cart.cart_membership_status.is_a_member %>
             <td><%= number_to_currency(speaking_event.member_price) %></td>
