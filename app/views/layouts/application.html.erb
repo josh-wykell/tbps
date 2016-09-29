@@ -31,13 +31,13 @@
           </div>
         </div>
 
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
-          
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
             <div class="nav_center">
               <div class="nav_center_text">
                 <ul class= "nav nav-pills">
                   <li class="nav navbar-nav big_li"><%= link_to 'Member Directory', members_path %></li>
-                  <li class="nav navbar-nav big_li"><%= link_to 'Film Series', films_path %></li>
+                  <!-- <li class="nav navbar-nav big_li"><%= link_to 'Film Series', films_path %></li> -->
                   <% if current_cart.cart_membership_status %>
                     <li class=" nav navbar big_li"><%= link_to 'Speaker Program', speakers_path %></li>
                   <% else %>
@@ -67,7 +67,7 @@
             </div>
           <% end %>
       </div>
-    </nav> 
+    </nav>
 
     <div class="container">
       <% flash.each do |name, msg| %>
@@ -78,6 +78,6 @@
       <% end %>
 
     <%= yield %>
-    </div>  
+    </div>
   </body>
 </html>
