@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   helper_method :current_cart
-   #Prevent CSRF attacks by raising an exception.
-   #For APIs, you may want to use :null_session instead.
-  protect_from_forgery 
+  protect_from_forgery
+  #this current_cart method creates a session that is tied to the cart. If the current_cart is purchased it will make the session id nil
+  # if the session id is nil it will create a new cart and set the session id to that cart's id.
   def current_cart
     if session[:cart_id]
       @current_cart ||= Cart.find(session[:cart_id])
