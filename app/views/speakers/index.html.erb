@@ -1,5 +1,5 @@
 
-<h1>2015-2016 Speakers</h1>
+<h1>2016-2017 Speakers</h1>
 <% @speakers.each do |speaker| %>
   <div class="col-lg-4 main_theme_layout speaker_index_layout">
     <h2><%= link_to "#{speaker.name}", speaker_path(speaker) %></h2>
@@ -9,5 +9,3 @@
     <p><%= truncate speaker.biography, length: 75, separator: ' ' %> <%= link_to "For a full biography, event times, and prices click here.", speaker_path(speaker) %></p>
   </div>
 <% end %>
-
-
